@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,6 +6,21 @@ using UnityEngine;
 
 public class Card : CardAttribute, ICanDrag, ICanClick, ICanHover
 {
+    [Header("흔들림 효과 설정")]
+    [Tooltip("흔들림이 지속되는 시간")]
+    [SerializeField] float wobbleDuration = 0.5f;
+
+    [Tooltip("흔들리는 강도 (각도)")]
+    [SerializeField] float wobbleStrength = 15f;
+
+    [Tooltip("초당 흔들리는 횟수")]
+    [SerializeField] int wobbleVibrato = 20;
+
+    [Header("사라지는 효과 설정")]
+    [Tooltip("사라지는 데 걸리는 시간")]
+    [SerializeField] float destroyDuration = 0.3f;
+
+
     [SerializeField] CardAnim _anim;
     [SerializeField] SpriteRenderer _renderer;
     [SerializeField] SpriteRenderer _backRenderer;
@@ -59,14 +75,31 @@ public class Card : CardAttribute, ICanDrag, ICanClick, ICanHover
         _backRenderer.sortingOrder = amount;
         _shadowRenderer.sortingOrder = amount - 1;
     }
+    public void DestroyCardWithAnimation()
+    {
+        transform.DOShakeRotation(wobbleDuration, new Vector3(0, 0, wobbleStrength), wobbleVibrato)
+            .SetEase(Ease.OutQuad)
+            // 2. (핵심) 흔들림이 끝나면, 이어서 사라지는 애니메이션을 실행합니다.
+            .OnComplete(() =>
+            {
+                // 사라지는 애니메이션 시퀀스 생성
+                Sequence destroySequence = DOTween.Sequence();
+                destroySequence.Join(transform.DOScale(0f, destroyDuration).SetEase(Ease.InBack));
+                destroySequence.Join(GetComponent<SpriteRenderer>().DOFade(0f, destroyDuration));
 
+                // 3. 사라지는 애니메이션까지 모두 끝나면, 게임 오브젝트를 최종적으로 파괴합니다.
+                destroySequence.OnComplete(() =>
+                {
+                    Destroy(gameObject);
+                });
+            });
+    }
     #region Drag
     public void OnBeginDrag()
     {
         
         transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
         SetSorting(100);
-        _anim.OnBeginDrag();
         GameEvent.Raise(GameEventType.CardDrag,this,_owner);
     }
     public void OnDrag(Vector2 pos)
@@ -84,7 +117,6 @@ public class Card : CardAttribute, ICanDrag, ICanClick, ICanHover
     // 클릭
     public void OnClicked()
     {
-        
     }
 
     #region Hover

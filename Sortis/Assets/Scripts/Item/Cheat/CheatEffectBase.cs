@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class CheatEffectBase : MonoBehaviour , ICanClick
+{
+
+    [SerializeField] protected CheatData _data;
+    [SerializeField] protected int _charges;
+
+    public bool Clickable { get; set; } = true;
+
+    public void Initialize(CheatData data)
+    {
+        _data = data;
+        _charges = _data.Charges;
+    }
+
+    public abstract void OnClicked();
+
+    public abstract void Use();
+}

@@ -131,6 +131,9 @@ public class ActionManager : MonoBehaviour
             case GameEventType.GameWin:
                 
                 break;
+            case GameEventType.RemoveHand:
+                _hand.ClearHand();
+                break;
         }
         _itemInventory.InvokeHack(type, a, b);
         _uiManager.SetText();

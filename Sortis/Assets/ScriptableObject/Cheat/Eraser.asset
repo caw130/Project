@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1599ae9f6733104faf406fdf701c671, type: 3}
+  m_Name: Eraser
+  m_EditorClassIdentifier: 
+  _name: "\uC9C0\uC6B0\uAC1C"
+  _description: "\uC190\uC5D0 \uC788\uB294 \uCE74\uB4DC\uB97C \uC9C0\uC6C1\uB2C8\uB2E4."
+  _icon: {fileID: 0}
+  _price: 0
+  _charges: 1
+  _cheatPrefab: {fileID: 1903940017735999098, guid: 022359654d1fadd4fa417d941ed4b89f, type: 3}

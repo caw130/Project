@@ -18,6 +18,7 @@ public enum GameEventType
     OpenStore,
     Draw,
     Throw,
+    RemoveHand,
 }
 
 public struct GameActionInfo

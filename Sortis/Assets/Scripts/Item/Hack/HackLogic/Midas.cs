@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Midas : HackEffectBase
+public class Midas : HackEventType
 {
 
     public override void OnGameEvent(GameEventType type, object a, object b)

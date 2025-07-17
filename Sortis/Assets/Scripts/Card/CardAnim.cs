@@ -6,6 +6,8 @@ using UnityEngine;
 public class CardAnim : MonoBehaviour
 {
     Vector3 _originalScale = new Vector3(1, 1, 1);
+
+    [Header("애니메이션 값")]
     [SerializeField] float _hoverScale;
     [SerializeField] float _moveSpeed;
     [SerializeField] float _maxTiltAngle;
@@ -41,9 +43,9 @@ public class CardAnim : MonoBehaviour
 
         Sequence flipSequence = DOTween.Sequence();
 
-        flipSequence.Append(transform.DORotate(targetRotation, 2)
+        flipSequence.Append(transform.DORotate(targetRotation, 0.2f)
             .SetEase(Ease.InQuad));
-
+        Debug.Log("짜란");
     }
 
     public void Selected()
@@ -54,21 +56,6 @@ public class CardAnim : MonoBehaviour
     public void SelectedOut()
     {
         transform.DOScale(_originalScale, 0.2f);
-    }
-
-    public void OnBeginDrag()
-    {
-        _lastParentPosition = _parentTransform.position;
-    }
-    public void OnDrag(Vector2 parentTargetPosition)
-    {
-        
-    }
-
-    public void OnDragEnd()
-    {
-        transform.DOLocalMove(Vector3.zero, 0.25f).SetEase(_backEase);
-        transform.DOLocalRotate(Vector3.zero, 0.25f).SetEase(Ease.OutBack);
     }
     private void OnDestroy()
     {

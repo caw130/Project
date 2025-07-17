@@ -10,5 +10,5 @@ public abstract class HackEffectBase : MonoBehaviour
         _data = data;
     }
 
-    public abstract void OnGameEvent(GameEventType type, object a, object b);
+
 }

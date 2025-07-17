@@ -18,5 +18,5 @@ MonoBehaviour:
   _price: 0
   _rarity: 0
   _type: 0
-  _trigger: 
+  _trigger: 00000000
   _hackPrefab: {fileID: 0}

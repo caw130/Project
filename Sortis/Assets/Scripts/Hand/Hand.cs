@@ -95,7 +95,7 @@ public class Hand : MonoBehaviour, ICardStacker
     {
         foreach (var card in _drawCard)
         {
-            Destroy(card.gameObject);
+            card.DestroyCardWithAnimation();
         }
         _drawCard.Clear();
     }

@@ -46,6 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1333fef2aabe28c499431a2692daf3f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wobbleDuration: 5
+  wobbleStrength: 100
+  wobbleVibrato: 100
+  destroyDuration: 0.3
   _anim: {fileID: 9177243792992038622}
   _renderer: {fileID: 791382703806698757}
   _backRenderer: {fileID: 4487917972546645053}
