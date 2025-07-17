@@ -48,4 +48,9 @@ public class ThrowDeck : MonoBehaviour, ICanClick
         _throwCards.Clear();
         SetRender();
     }
+
+    public void RemoveData(int num)
+    {
+        _throwCards.RemoveAt(num);
+    }
 }

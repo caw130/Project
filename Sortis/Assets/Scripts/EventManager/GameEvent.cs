@@ -19,6 +19,7 @@ public enum GameEventType
     Draw,
     Throw,
     RemoveHand,
+    RemoveLastThrow,
 }
 
 public struct GameActionInfo

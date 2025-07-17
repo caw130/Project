@@ -105,6 +105,11 @@ public class ActionManager : MonoBehaviour
             case GameEventType.OnCardDiscard:
                 _discardManager.CardDiscard(type, a, b);
                 break;
+
+            case GameEventType.RemoveLastThrow:
+                _throwDeck.RemoveData(_throwDeck.ThrowCard-1);
+                break;
+
             case GameEventType.Draw:
                 break;
             case GameEventType.ZullComplete:

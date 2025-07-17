@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbda4fdba91267c4d86ab01335eacb3e, type: 3}
+  m_Name: Alpha
+  m_EditorClassIdentifier: 
+  _name: Alpha
+  _description: "\uCE74\uB4DC\uB97C 3\uBC88 \uC5F0\uC18D \uB0B4\uBA74, \uB2E4\uC74C
+    \uBC84\uB9AC\uB294 \uCE74\uB4DC\uB97C \uC81C\uAC70\uD569\uB2C8\uB2E4."
+  _icon: {fileID: 0}
+  _price: 10
+  _rarity: 2
+  _type: 0
+  _trigger: 0300000004000000
+  _hackPrefab: {fileID: 3214073030400252567, guid: 3abda7665405ef94cb6f8ac39fd625e3, type: 3}
