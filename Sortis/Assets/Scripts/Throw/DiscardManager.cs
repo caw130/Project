@@ -17,6 +17,7 @@ public class DiscardManager : MonoBehaviour
         cardToDiscard.transform.position = _throwDeck.transform.position;
         originalStacker.RemoveCard(cardToDiscard);
 
-        Destroy(cardToDiscard.gameObject);
+        cardToDiscard.transform.position = transform.position;
+        cardToDiscard.DestroyCardWithAnimation();
     }
 }

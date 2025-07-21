@@ -46,10 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1333fef2aabe28c499431a2692daf3f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wobbleDuration: 5
-  wobbleStrength: 100
-  wobbleVibrato: 100
-  destroyDuration: 0.3
   _anim: {fileID: 9177243792992038622}
   _renderer: {fileID: 791382703806698757}
   _backRenderer: {fileID: 4487917972546645053}
@@ -346,7 +342,7 @@ Transform:
   m_GameObject: {fileID: 9059449909832544984}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05, y: -0.05, z: 0}
+  m_LocalPosition: {x: -0.08, y: -0.08, z: 0.01}
   m_LocalScale: {x: 2.8, y: 2.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -394,7 +390,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 902476652, guid: a03b2bd70cc12a345b4adb32c760d6a5, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.3764706}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.69411767}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

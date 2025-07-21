@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,12 +17,14 @@ public class ThrowDeck : MonoBehaviour, ICanClick
 
     private void Start()
     {
+    }
+    private void Update()
+    {
         SetRender();
     }
     public void CardDiscard(CardData throwCard)
     {
         _throwCards.Add(throwCard);
-        SetRender();
     }
     public void OnClicked()
     {
@@ -33,7 +36,6 @@ public class ThrowDeck : MonoBehaviour, ICanClick
         List<CardData> cards = new List<CardData>();
         cards.AddRange(_throwCards);
         _throwCards.Clear();
-        SetRender();
         return cards;
     }
     void SetRender()
@@ -46,11 +48,12 @@ public class ThrowDeck : MonoBehaviour, ICanClick
     public void Clear()
     {
         _throwCards.Clear();
-        SetRender();
     }
 
     public void RemoveData(int num)
     {
         _throwCards.RemoveAt(num);
     }
+
+
 }

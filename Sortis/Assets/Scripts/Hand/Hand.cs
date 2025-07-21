@@ -60,15 +60,7 @@ public class Hand : MonoBehaviour, ICardStacker
         }
     }
 
-    /// <summary>
-    /// 크기 가늠을 위해 추가
-    /// </summary>
-    private void OnDrawGizmosSelected()
-    {
-        Vector2 line = new Vector2(_xuiSize, _yuiSize);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, line);
-    }
+
 
     public List<Card> SplitStackFrom(Card startCard)
     {
@@ -98,5 +90,25 @@ public class Hand : MonoBehaviour, ICardStacker
             card.DestroyCardWithAnimation();
         }
         _drawCard.Clear();
+    }
+
+    public void DestroyHand()
+    {
+        foreach(var card in _drawCard)
+        {
+            Destroy(card.gameObject);
+        }
+        _drawCard.Clear();
+    }
+
+    /// <summary>
+    /// 크기 가늠을 위해 추가
+    /// </summary>
+
+    private void OnDrawGizmosSelected()
+    {
+        Vector2 line = new Vector2(_xuiSize, _yuiSize);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position, line);
     }
 }

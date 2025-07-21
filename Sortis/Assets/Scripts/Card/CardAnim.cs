@@ -59,6 +59,7 @@ public class CardAnim : MonoBehaviour
     }
     private void OnDestroy()
     {
+        Debug.Log("Á¦°ÅµÊ");
         transform.DOKill();
     }
 }

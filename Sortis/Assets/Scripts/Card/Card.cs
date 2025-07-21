@@ -1,25 +1,8 @@
 using DG.Tweening;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Card : CardAttribute, ICanDrag, ICanClick, ICanHover
 {
-    [Header("흔들림 효과 설정")]
-    [Tooltip("흔들림이 지속되는 시간")]
-    [SerializeField] float wobbleDuration = 0.5f;
-
-    [Tooltip("흔들리는 강도 (각도)")]
-    [SerializeField] float wobbleStrength = 15f;
-
-    [Tooltip("초당 흔들리는 횟수")]
-    [SerializeField] int wobbleVibrato = 20;
-
-    [Header("사라지는 효과 설정")]
-    [Tooltip("사라지는 데 걸리는 시간")]
-    [SerializeField] float destroyDuration = 0.3f;
-
 
     [SerializeField] CardAnim _anim;
     [SerializeField] SpriteRenderer _renderer;
@@ -66,41 +49,38 @@ public class Card : CardAttribute, ICanDrag, ICanClick, ICanHover
     public void CardParent(ICardStacker owner)
     {
         _owner = owner;
-        
+
         transform.SetParent(_owner.transform);
     }
     public void SetSorting(int amount)
     {
         _renderer.sortingOrder = amount;
         _backRenderer.sortingOrder = amount;
-        _shadowRenderer.sortingOrder = amount - 1;
+        _shadowRenderer.sortingOrder = amount;
     }
     public void DestroyCardWithAnimation()
     {
-        transform.DOShakeRotation(wobbleDuration, new Vector3(0, 0, wobbleStrength), wobbleVibrato)
-            .SetEase(Ease.OutQuad)
-            // 2. (핵심) 흔들림이 끝나면, 이어서 사라지는 애니메이션을 실행합니다.
-            .OnComplete(() =>
-            {
-                // 사라지는 애니메이션 시퀀스 생성
-                Sequence destroySequence = DOTween.Sequence();
-                destroySequence.Join(transform.DOScale(0f, destroyDuration).SetEase(Ease.InBack));
-                destroySequence.Join(GetComponent<SpriteRenderer>().DOFade(0f, destroyDuration));
+        // 혹시 다른 애니메이션이 실행 중일 수 있으니, 먼저 중지시켜 줍니다.
+        transform.DOKill();
 
-                // 3. 사라지는 애니메이션까지 모두 끝나면, 게임 오브젝트를 최종적으로 파괴합니다.
-                destroySequence.OnComplete(() =>
-                {
-                    Destroy(gameObject);
-                });
-            });
+        // 1. 시퀀스를 만들어 여러 애니메이션을 동시에 실행합니다.
+        Sequence destroySequence = DOTween.Sequence();
+
+        // 2. 0.5초 동안 투명해지는 애니메이션과 작아지는 애니메이션을 동시에 실행합니다.
+        destroySequence.Join(transform.DOScale(0f, 0.5f).SetEase(Ease.InBack)); // 0배로 작아짐
+
+        // 3. (핵심) 위의 모든 애니메이션이 끝나면, OnComplete 안의 코드를 실행합니다.
+        destroySequence.OnComplete(() =>
+        {
+            // 이 게임 오브젝트를 파괴합니다.
+            Destroy(gameObject);
+        });
     }
     #region Drag
     public void OnBeginDrag()
     {
-        
-        transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
         SetSorting(100);
-        GameEvent.Raise(GameEventType.CardDrag,this,_owner);
+        GameEvent.Raise(GameEventType.CardDrag, this, _owner);
     }
     public void OnDrag(Vector2 pos)
     {
@@ -109,7 +89,6 @@ public class Card : CardAttribute, ICanDrag, ICanClick, ICanHover
     public void OnDrop()
     {
         GameEvent.Raise(GameEventType.CardDrop, this, transform.position);
-        transform.localScale = Vector3.one;
         SetSorting(1);
     }
     #endregion
@@ -131,4 +110,8 @@ public class Card : CardAttribute, ICanDrag, ICanClick, ICanHover
         _anim.SelectedOut();
     }
     #endregion
+    private void OnDestroy()
+    {
+        transform.DOKill();
+    }
 }

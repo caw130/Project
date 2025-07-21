@@ -74,7 +74,8 @@ public class Zull : MonoBehaviour, ICardStacker
     {
         foreach (var card in _cards)
         {
-            Destroy(card.gameObject);
+            card.transform.position = transform.position;
+            card.DestroyCardWithAnimation();
         }
         _cards.Clear();
     }

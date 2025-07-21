@@ -73,6 +73,9 @@ public class ActionManager : MonoBehaviour
 
         _isProcessingQueue = false;
         _eventDepth = 0;
+
+        _uiManager.SetText();
+        CheckGameState();
     }
     private void AddActionToQueue(GameActionInfo info)
     {
@@ -141,8 +144,6 @@ public class ActionManager : MonoBehaviour
                 break;
         }
         _itemInventory.InvokeHack(type, a, b);
-        _uiManager.SetText();
-        CheckGameState();
     }
 
     void CheckGameState()
@@ -199,7 +200,7 @@ public class ActionManager : MonoBehaviour
 
     public void RestartGame()
     {
-        _hand.ClearHand();
+        _hand.DestroyHand();
         UserStat.Instance.ResetIndex();
         Goldmanager.Instance.ResetGold();
         _roundManager.ResetRound();

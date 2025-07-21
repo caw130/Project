@@ -38,8 +38,8 @@ public class DrawManager : MonoBehaviour, ICanClick
     void SetCard()
     {
         _card = Instantiate(_cardPrefab);
-        _card.transform.position = new Vector3(transform.position.x, transform.position.y, 1f);
+        _card.transform.position = new Vector3(transform.position.x, transform.position.y, -2f);
         _card.SetState(false);
-        _card.SetSorting(-100);
+        _card.SetSorting(1);
     }
 }
