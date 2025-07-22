@@ -70,12 +70,21 @@ public class Zull : MonoBehaviour, ICardStacker
         CheckZullComplete();
     }
 
-    public void ClearZull()
+    public void ZullCardsRemove()
     {
         foreach (var card in _cards)
         {
             card.transform.position = transform.position;
             card.DestroyCardWithAnimation();
+        }
+        _cards.Clear();
+    }
+
+    public void ClearZull()
+    {
+        foreach (var card in _cards)
+        {
+            Destroy(card.gameObject);
         }
         _cards.Clear();
     }

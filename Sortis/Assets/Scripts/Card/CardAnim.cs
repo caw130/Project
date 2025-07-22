@@ -13,7 +13,6 @@ public class CardAnim : MonoBehaviour
     [SerializeField] float _maxTiltAngle;
     [SerializeField] float _tiltDex;
     [SerializeField] Ease _moveEase = Ease.OutQuad;
-    [SerializeField] Ease _backEase = Ease.Flash;
     Transform _parentTransform;
     Vector3 _lastParentPosition;
 

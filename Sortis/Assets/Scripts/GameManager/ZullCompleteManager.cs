@@ -12,6 +12,6 @@ public class ZullCompleteManager : MonoBehaviour
         if (!(a is Zull completedzull)) return;
         Goldmanager.Instance.GetGold(_rewardGold);
         UserStat.Instance.AddTotlaCompleteZull();
-        completedzull.ClearZull();
+        completedzull.ZullCardsRemove();
     }
 }

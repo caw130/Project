@@ -15,9 +15,6 @@ public class ThrowDeck : MonoBehaviour, ICanClick
     public int ThrowCard => _throwCards.Count;
     public int MaxCard => _maxCard;
 
-    private void Start()
-    {
-    }
     private void Update()
     {
         SetRender();

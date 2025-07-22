@@ -6,19 +6,16 @@ public class ShuffleManager : MonoBehaviour
 {
     [SerializeField] Deck _deck;
     [SerializeField] ThrowDeck _throwDeck;
-
+    [SerializeField] CardShuffleAnimator _animator;
     public void ShuffleDeck()
     {
         List<CardData> newCard;
         newCard = _throwDeck.ReturnCard();
+        int count = newCard.Count;
         _deck.MakeDeck();
         _deck.TakeList(newCard);
         _deck.Shuffle();
-        Coroutine ddd = StartCoroutine(dd());
+        _animator.AnimateShuffle(count);
     }
 
-    IEnumerator dd()
-    {
-        yield return null;
-    }
 }

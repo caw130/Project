@@ -8,25 +8,50 @@ public class Shop : MonoBehaviour
     [SerializeField] CheatPool _cheatPool;
     [SerializeField] ItemInventory _inventory;
     [SerializeField] List<HackData> _hacks;
+    [SerializeField] ShopItem[] _shopItem;
 
     private void Start()
     {
         _hackPool.InitializePool();
-        List<HackData> a = _hackPool.GiveHack(3);
-        _hacks = a;
+        
+        Initialize();
+    }
+
+    public void Initialize()
+    {
+        foreach(var shop in _shopItem)
+        {
+            shop.Initialize(this);
+        }
+    }
+
+    public void shuffleItem()
+    {
+        List<HackData> a = _hackPool.GiveHack(_shopItem.Length);
+        for(int i = 0; i < _shopItem.Length; i++)
+        {
+            _shopItem[i].ItemSpawn(a[i]);
+        }
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            if(_hacks.Count > 0)
-            {
-                _inventory.GetItem(_hacks[0]);
-                _hackPool.ItemRemove(_hacks[0]);
-                _hacks.RemoveAt(0);
-                
-            }
+                shuffleItem();
+        }  
+    }
+
+    
+    public void BuyItem(ItemData data)
+    {
+        if(data is HackData hack)
+        {
+            _hackPool.ItemRemove(hack);
+        }
+        else if(data is CheatData cheat)
+        {
+            
         }
     }
 }

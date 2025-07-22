@@ -42,7 +42,6 @@ public class ZullManager : MonoBehaviour
             Vector2 pos;
             pos.y = 0;
             pos.x = startx + xpos*(i+1);
-            Debug.Log(pos.x);
             _zulls[i].transform.localPosition = pos;
         }
     }

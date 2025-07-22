@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class HackPool : MonoBehaviour
@@ -28,6 +26,14 @@ public class HackPool : MonoBehaviour
 
             tempAvailableItems.RemoveAt(randomIndex);
         }
+
+        while (shopItems.Count < count)
+        {
+            Debug.Log("a");
+            shopItems.Add(_datas[0]);
+        }
+
+        Debug.Log(shopItems.Count);
         return shopItems;
     }
 
