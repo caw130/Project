@@ -12,10 +12,12 @@ public class RoundManager : MonoBehaviour
     public int MaxRound => _maxRound;
     public void RoundStart()
     {
-        _round++;
         GameEvent.Raise(GameEventType.RoundStarted);
     }
-
+    public void AddRound()
+    {
+        _round++;
+    }
     public void ResetRound()
     {
         _round = 0;

@@ -11,6 +11,7 @@ public class ShopItem : MonoBehaviour, IPointerClickHandler
     [SerializeField] TextMeshProUGUI _goldText;
     Shop _shop;
     ItemData _data;
+    bool _blank = true;
     
     public void Initialize(Shop shop)
     {
@@ -22,15 +23,16 @@ public class ShopItem : MonoBehaviour, IPointerClickHandler
         _data = data;
         _icon.sprite = _data.Icon;
         _goldText.text = $"{_data.Price}$";
+        _blank = false;
     }
-
-    public void ItemSell()
+    public void ChangeState(bool state)
     {
-        _shop.BuyItem(_data);
+        _blank = !state;
+        gameObject.SetActive(state);
     }
-
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Å¬¸¯");
+        if(!_blank)
+            _shop.BuyItem(_data,this);
     }
 }

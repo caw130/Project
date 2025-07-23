@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pocket : MonoBehaviour
+public class Pocket : HackStatType
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Equip()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Unequip()
     {
-        
+ 
     }
 }

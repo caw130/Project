@@ -29,11 +29,9 @@ public class HackPool : MonoBehaviour
 
         while (shopItems.Count < count)
         {
-            Debug.Log("a");
             shopItems.Add(_datas[0]);
         }
 
-        Debug.Log(shopItems.Count);
         return shopItems;
     }
 

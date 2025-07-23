@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -40,7 +41,8 @@ public class UiManager : MonoBehaviour
     {
         Debug.Log("게임 오버");
         _resultBackground.gameObject.SetActive(true);
-        _resultBackground.color = _gameoverColor;
+        _resultBackground.color = Color.clear;
+        _resultBackground.DOColor(_gameoverColor,0.5f);
         _result.ShowGameOver(_roundManager.Round, _roundManager.MaxRound);
         _resultPanel.gameObject.SetActive(true);
         
@@ -50,7 +52,8 @@ public class UiManager : MonoBehaviour
     {
         Debug.Log("게임 클리어");
         _resultBackground.gameObject.SetActive(true);
-        _resultBackground.color = _gameClearColor;
+        _resultBackground.color = Color.clear;
+        _resultBackground.DOColor(_gameClearColor, 0.5f);
         _result.ShowGameClear(_roundManager.Round, _roundManager.MaxRound);
         _resultPanel.gameObject.SetActive(true);
     }

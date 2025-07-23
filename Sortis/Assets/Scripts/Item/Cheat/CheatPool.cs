@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class CheatPool : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] List<CheatData> _datas;
 
-    // Update is called once per frame
-    void Update()
+    public void InitalizePool()
     {
-        
+
+    }
+    public List<CheatData> GiveCheat(int count)
+    {
+        List<CheatData> shopItems = new List<CheatData>();
+        for(int i= 0;i<count; i++)
+        {
+            int randomindex = Random.Range(0, _datas.Count);
+            shopItems.Add(_datas[randomindex]);
+        }
+        return shopItems;
+    }
+    public CheatData GiveCheat()
+    {
+        int randomindex = Random.Range(0, _datas.Count);
+        return _datas[randomindex];
     }
 }

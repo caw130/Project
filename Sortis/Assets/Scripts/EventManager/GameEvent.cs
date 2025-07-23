@@ -12,6 +12,7 @@ public enum GameEventType
     OnCardDiscard,
     RoundEnded,
     RoundStarted,
+    StartNewRound,
     GameOver,
     GameWin,
     UseItem,
@@ -19,6 +20,8 @@ public enum GameEventType
     Draw,
     Throw,
     RemoveHand,
+    BuyItem,
+    ShopRerool,
     RemoveLastThrow,
 }
 

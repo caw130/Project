@@ -28,11 +28,14 @@ public class ActionManager : MonoBehaviour
     [SerializeField] ZullManager _zullManager;
     [SerializeField] Deck _deck;
     [SerializeField] ItemInventory _itemInventory;
+    [SerializeField] Shop _shop;
+    [SerializeField] HackPool _hackPool;
+    [SerializeField] CheatPool _cheatPool;
 
     Queue<GameActionInfo> _eventQueue = new Queue<GameActionInfo>();
     bool _isProcessingQueue = false;
-    public int _eventDepth = 0;
-    const int MAX_EVENT_DEPTH = 10;
+    int _eventDepth = 0;
+    [SerializeField] int MAX_EVENT_DEPTH = 10;
 
     public void Enable()
     {
@@ -127,9 +130,22 @@ public class ActionManager : MonoBehaviour
                 HandleRoundEnd();
                 break;
 
-            case GameEventType.OpenStore:
+            case GameEventType.StartNewRound:
+                _roundManager.RoundStart();
+                ChangeGameState(GameState.GamePlay);
+                _uiManager.SetText();
                 break;
 
+            case GameEventType.OpenStore:
+                
+                break;
+
+            case GameEventType.BuyItem:
+                _uiManager.SetText();
+                break;
+            case GameEventType.ShopRerool:
+                _uiManager.SetText();
+                break;
             case GameEventType.UseItem:
                 break;
 
@@ -188,14 +204,18 @@ public class ActionManager : MonoBehaviour
 
     void HandleRoundEnd()
     {
+        _roundManager.AddRound();
+        CheckGameState();
+        if (_gameState == GameState.GameClear || _gameState == GameState.GameOver) return;
         _shuffle.ShuffleDeck();
         _uiManager.SetText();
         ChangeGameState(GameState.Shop);
-
+        _shop.ShopOpen();
+        GameEvent.Raise(GameEventType.OpenStore);
         //임시
-        _roundManager.RoundStart();
-        ChangeGameState(GameState.GamePlay);
-        _uiManager.SetText();
+        //_roundManager.RoundStart();
+        //ChangeGameState(GameState.GamePlay);
+        //_uiManager.SetText();
     }
 
     public void RestartGame()
@@ -207,6 +227,9 @@ public class ActionManager : MonoBehaviour
         _zullManager.ResetZulls();
         _throwDeck.Clear();
         _uiManager.ResetUi();
+        _hackPool.InitializePool();
+        _shop.Initialize();
+        _itemInventory.ClearInventory();
         ChangeGameState(GameState.GamePlay);
         _deck.ClearDeck();
         _deck.MakeDeck();
