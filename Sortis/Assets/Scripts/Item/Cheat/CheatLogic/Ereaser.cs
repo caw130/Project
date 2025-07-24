@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Ereaser : CheatEffectBase
 {
-    public override void OnClicked()
-    {
-        Use();
-    }
 
     public override void Use()
     {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CheatEffectBase : MonoBehaviour , ICanClick
+public abstract class CheatEffectBase : MonoBehaviour
 {
 
     [SerializeField] protected CheatData _data;
@@ -15,8 +15,6 @@ public abstract class CheatEffectBase : MonoBehaviour , ICanClick
         _data = data;
         _charges = _data.Charges;
     }
-
-    public abstract void OnClicked();
 
     public abstract void Use();
 }
