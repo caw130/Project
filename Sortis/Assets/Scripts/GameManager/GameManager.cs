@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     {
         _actionManager.Enable();
         GameEvent.GameRestart += Restart;
+        _actionManager.GameStart();
         Restart();
     }
 

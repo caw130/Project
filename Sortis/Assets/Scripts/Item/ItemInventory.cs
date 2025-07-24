@@ -15,6 +15,10 @@ public class ItemInventory : MonoBehaviour
     {
         HackEffectBase hack = Instantiate(data.HackPrefab);
         hack.Initialize(data);
+        if(hack is HackStatType statHack)
+        {
+            statHack.Equip();
+        }
         _hacks.Add(hack);
     }
     public void GetCheat(CheatData data)
@@ -49,6 +53,10 @@ public class ItemInventory : MonoBehaviour
         _cheats.Clear();
     }
     public void SellItem(ItemData data)
+    {
+        
+    }
+    private void OnDrawGizmosSelected()
     {
         
     }

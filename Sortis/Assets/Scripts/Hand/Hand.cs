@@ -21,10 +21,7 @@ public class Hand : MonoBehaviour, ICardStacker
         if (count == 0) return;
 
         float topy = _yuiSize / 2;
-        float bottomy = -_yuiSize / 2;
-
-        float totalHeight = topy - bottomy;
-        float spacing = totalHeight / (count + 1);
+        float spacing = _yuiSize / (count + 1);
         for (int i = 0; i < count; i++)
         {
             Card currentCard = _drawCard[i];

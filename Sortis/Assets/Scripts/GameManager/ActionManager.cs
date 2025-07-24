@@ -218,6 +218,11 @@ public class ActionManager : MonoBehaviour
         //_uiManager.SetText();
     }
 
+    public void GameStart()
+    {
+        _uiManager.Initialize();
+        _shop.Initialize();
+    }
     public void RestartGame()
     {
         _hand.DestroyHand();
@@ -228,7 +233,6 @@ public class ActionManager : MonoBehaviour
         _throwDeck.Clear();
         _uiManager.ResetUi();
         _hackPool.InitializePool();
-        _shop.Initialize();
         _itemInventory.ClearInventory();
         ChangeGameState(GameState.GamePlay);
         _deck.ClearDeck();

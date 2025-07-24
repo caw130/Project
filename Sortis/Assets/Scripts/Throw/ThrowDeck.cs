@@ -9,6 +9,7 @@ public class ThrowDeck : MonoBehaviour, ICanClick
     [SerializeField] List<CardData> _throwCards;
     [SerializeField] SpriteRenderer _renderer;
     [SerializeField] int _maxCard;
+    [SerializeField] ThrowCardView _cardView;
     bool _haveCard;
     public bool Clickable { get; set; } = false;
 
@@ -25,7 +26,7 @@ public class ThrowDeck : MonoBehaviour, ICanClick
     }
     public void OnClicked()
     {
-        Debug.Log("It is ThrowDeck");
+        _cardView.Show(_throwCards, Vector2.zero);
     }
 
     public List<CardData> ReturnCard()

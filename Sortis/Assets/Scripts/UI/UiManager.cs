@@ -13,7 +13,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] Color _gameoverColor;
     [SerializeField] Color _gameClearColor;
     [SerializeField] Image _resultBackground;
-    [SerializeField] GameObject _resultPanel;
+    [SerializeField] ResultPanel _resultPanel;
     [SerializeField] ResultScreenUi _result;
     [SerializeField] ThrowDeck _throwDeck;
     [SerializeField] Deck _deck;
@@ -21,9 +21,10 @@ public class UiManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI _remainDeck;
     //[SerializeField] GameObject _throwCards;
 
-    private void Start()
+    public void Initialize()
     {
         SetText();
+        _resultPanel.Initialize();
     }
 
     public void SetText()
@@ -44,8 +45,8 @@ public class UiManager : MonoBehaviour
         _resultBackground.color = Color.clear;
         _resultBackground.DOColor(_gameoverColor,0.5f);
         _result.ShowGameOver(_roundManager.Round, _roundManager.MaxRound);
-        _resultPanel.gameObject.SetActive(true);
-        
+        _resultPanel.Show();
+
     }
 
     public void GameClearResult()
@@ -55,7 +56,7 @@ public class UiManager : MonoBehaviour
         _resultBackground.color = Color.clear;
         _resultBackground.DOColor(_gameClearColor, 0.5f);
         _result.ShowGameClear(_roundManager.Round, _roundManager.MaxRound);
-        _resultPanel.gameObject.SetActive(true);
+        _resultPanel.Show();
     }
     public void OpenThrowCrads()
     {
@@ -64,8 +65,9 @@ public class UiManager : MonoBehaviour
 
     public void ResetUi()
     {
+        _resultBackground.DOColor(Color.clear, 0.5f);
+        _resultPanel.Hide();
         _resultBackground.gameObject.SetActive(false);
-        _resultPanel.gameObject.SetActive(false);
         SetText();
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using static UnityEditor.Progress;
 
@@ -8,6 +9,8 @@ public class Shop : MonoBehaviour
     [SerializeField] HackPool _hackPool;
     [SerializeField] CheatPool _cheatPool;
     [SerializeField] ItemInventory _inventory;
+    [SerializeField] TextMeshProUGUI _rerollText;
+    [SerializeField] TextMeshProUGUI _rerollClickText;
     [SerializeField] ShopItem[] _hackItems;
     [SerializeField] ShopItem[] _cheatItems;
     
@@ -36,6 +39,8 @@ public class Shop : MonoBehaviour
         gameObject.SetActive(true);
         shuffleItem();
         _rerollCost = 5;
+        _rerollText.text = $"Re Roll\r\n<color=#FFE62B>{_rerollCost}$</color>";
+        _rerollClickText.text = _rerollText.text;
     }
     public void Reroll()
     {
@@ -43,13 +48,15 @@ public class Shop : MonoBehaviour
         {
             shuffleItem();
             _rerollCost += 2;
+            _rerollText.text = $"Re Roll\r\n<color=#FFE62B>{_rerollCost}$</color>";
+            _rerollClickText.text = _rerollText.text;
+            GameEvent.Raise(GameEventType.ShopRerool);
         }
         
     }
     public void shuffleItem()
     {
         List<HackData> hackDatas = _hackPool.GiveHack(_hackItems.Length);
-        Debug.Log(_hackItems.Length);
         for (int i = 0; i < _hackItems.Length; i++)
         {
             _hackItems[i].ItemSpawn(hackDatas[i]);
@@ -62,16 +69,6 @@ public class Shop : MonoBehaviour
             _cheatItems[i].ChangeState(true);
         }
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            ShopOpen();
-            //shuffleItem();
-        }
-    }
-
     
     public void BuyItem(ItemData data, ShopItem item)
     {
