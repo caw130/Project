@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,9 @@ public class ItemInventory : MonoBehaviour
     [SerializeField] int _maxCheat;
     [SerializeField] List<HackEffectBase> _hacks = new List<HackEffectBase>();
     [SerializeField] List<CheatEffectBase> _cheats = new List<CheatEffectBase>();
+    [SerializeField] HackInventoryUi _hackInvnetory;
+    [SerializeField] CheatInventoryUi _cheatInventory;
+    [SerializeField] Shop _shop;
     public bool CanGetHack => _hacks.Count < _maxHack;
     public bool CanGetCheat => _cheats.Count < _maxCheat;
     public void GetHack(HackData data)
@@ -20,10 +24,12 @@ public class ItemInventory : MonoBehaviour
             statHack.Equip();
         }
         _hacks.Add(hack);
+        _hackInvnetory.AddHack(hack);
     }
     public void GetCheat(CheatData data)
     {
-        CheatEffectBase cheat = Instantiate(data.CheatPrefab);
+        CheatEffectBase cheat = Instantiate(data.CheatPrefab,transform);
+        cheat.transform.position = transform.position;
         cheat.Initialize(data);
         _cheats.Add(cheat);
     }
@@ -52,12 +58,14 @@ public class ItemInventory : MonoBehaviour
         }
         _cheats.Clear();
     }
-    public void SellItem(ItemData data)
+    public void SellHack(HackEffectBase effectBase)
     {
-        
-    }
-    private void OnDrawGizmosSelected()
-    {
-        
+        if (effectBase is HackStatType statHack)
+        {
+            statHack.Unequip();
+        }
+        _shop.SellHack(effectBase.Data);
+        _hacks.Remove(effectBase);
+        Destroy(effectBase.gameObject);
     }
 }

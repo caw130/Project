@@ -31,6 +31,8 @@ public class ActionManager : MonoBehaviour
     [SerializeField] Shop _shop;
     [SerializeField] HackPool _hackPool;
     [SerializeField] CheatPool _cheatPool;
+    [SerializeField] DrawManager _drawManager;
+
 
     Queue<GameActionInfo> _eventQueue = new Queue<GameActionInfo>();
     bool _isProcessingQueue = false;
@@ -126,6 +128,10 @@ public class ActionManager : MonoBehaviour
             case GameEventType.RoundStarted:
                 break;
 
+            case GameEventType.HackInfo:
+                _uiManager.ShowHackInfo(type,a);
+                break;
+
             case GameEventType.RoundEnded:
                 HandleRoundEnd();
                 break;
@@ -185,9 +191,10 @@ public class ActionManager : MonoBehaviour
         {
             case GameState.GamePlay:
                 _dragManager.enabled = true;
+                GamePause(true);
                 break;
             case GameState.Shop:
-                _dragManager.enabled = false;
+                GamePause(false);
                 break;
             case GameState.GameOver:
                 _dragManager.enabled = false;
@@ -202,6 +209,12 @@ public class ActionManager : MonoBehaviour
         
     }
 
+    void GamePause(bool state)
+    {
+        _throwDeck.Clickable = state;
+        _drawManager.Clickable = state;
+        _cardManager.OnPause = !state;
+    }
     void HandleRoundEnd()
     {
         _roundManager.AddRound();
@@ -212,10 +225,6 @@ public class ActionManager : MonoBehaviour
         ChangeGameState(GameState.Shop);
         _shop.ShopOpen();
         GameEvent.Raise(GameEventType.OpenStore);
-        //임시
-        //_roundManager.RoundStart();
-        //ChangeGameState(GameState.GamePlay);
-        //_uiManager.SetText();
     }
 
     public void GameStart()

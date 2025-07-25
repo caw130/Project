@@ -42,4 +42,12 @@ public class HackPool : MonoBehaviour
             _availableItems.Remove(purchasedItem);
         }
     }
+
+    public void ItemAdd(HackData purchasedItem)
+    {
+        if (!_availableItems.Contains(purchasedItem))
+        {
+            _availableItems.Add(purchasedItem);
+        }
+    }
 }

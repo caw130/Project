@@ -13,7 +13,8 @@ public class Shop : MonoBehaviour
     [SerializeField] TextMeshProUGUI _rerollClickText;
     [SerializeField] ShopItem[] _hackItems;
     [SerializeField] ShopItem[] _cheatItems;
-    
+    [SerializeField] ShopInteractive _shopAnim;
+
     int _rerollCost;
 
     public void Initialize()
@@ -31,12 +32,12 @@ public class Shop : MonoBehaviour
     }
     public void ShopClose()
     {
-        gameObject.SetActive(false);
+        _shopAnim.Hide();
         GameEvent.Raise(GameEventType.StartNewRound);
     }
     public void ShopOpen()
     {
-        gameObject.SetActive(true);
+        _shopAnim.Show();
         shuffleItem();
         _rerollCost = 5;
         _rerollText.text = $"Re Roll\r\n<color=#FFE62B>{_rerollCost}$</color>";
@@ -90,5 +91,11 @@ public class Shop : MonoBehaviour
             GameEvent.Raise(GameEventType.BuyItem, data);
         }
         
+    }
+
+    public void SellHack(HackData data)
+    {
+        Goldmanager.Instance.GetGold(data.Price / 2);
+        _hackPool.ItemAdd(data);
     }
 }

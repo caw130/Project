@@ -19,6 +19,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] Deck _deck;
     [SerializeField] TextMeshProUGUI _throwCrads;
     [SerializeField] TextMeshProUGUI _remainDeck;
+    [SerializeField] HackInfo _hackInfo;
     //[SerializeField] GameObject _throwCards;
 
     public void Initialize()
@@ -58,16 +59,24 @@ public class UiManager : MonoBehaviour
         _result.ShowGameClear(_roundManager.Round, _roundManager.MaxRound);
         _resultPanel.Show();
     }
-    public void OpenThrowCrads()
-    {
-        //TODO
-    }
 
     public void ResetUi()
     {
-        _resultBackground.DOColor(Color.clear, 0.5f);
+        _resultBackground.DOColor(Color.clear, 0.5f).
+            OnComplete(() => 
+            { 
+                _resultBackground.gameObject.SetActive(false); 
+            });
         _resultPanel.Hide();
-        _resultBackground.gameObject.SetActive(false);
+        
         SetText();
+    }
+
+    public void ShowHackInfo(GameEventType type, object a)
+    {
+        if (type != GameEventType.HackInfo) return;
+        if (!(a is HackItemPrefab hack)) return;
+
+        _hackInfo.Show(hack,hack.transform.position);
     }
 }

@@ -10,6 +10,7 @@ public class CardMoveManager : MonoBehaviour
     Vector2 _currentpos;
     Vector2 _newpos;
     bool _isDrag = false;
+    public bool OnPause { get; set; } = false;
 
     private void Update()
     {
@@ -60,10 +61,13 @@ public class CardMoveManager : MonoBehaviour
     }
     void DropCard(Card car, Vector2 pos)
     {
-        _newStacker = _zullManager.HandleCardDrop(pos);
+        if (!OnPause)
+        {
+            _newStacker = _zullManager.HandleCardDrop(pos);
+        }
         if (_newStacker != null)
         {
-
+            
             _newStacker.AddCard(_draggedCards);
 
         }

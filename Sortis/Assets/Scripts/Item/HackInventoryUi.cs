@@ -4,13 +4,38 @@ using UnityEngine;
 
 public class HackInventoryUi : MonoBehaviour
 {
+    [SerializeField] ItemInventory _inventory;
     [SerializeField] HackItemPrefab _hackPrefab;
     [SerializeField] float _xSize;
     [SerializeField] float _ySize;
 
-    public void AddHack()
+    [SerializeField] List<HackItemPrefab> _hacks;
+
+    public void AddHack(HackEffectBase hack)
     {
-        HackItemPrefab hack =Instantiate(_hackPrefab,transform);
+        HackItemPrefab hackPrefab = Instantiate(_hackPrefab, transform);
+        hackPrefab.SpawnHack(hack, this);
+        _hacks.Add(hackPrefab);
+        Rerange();
+    }
+    
+    void Rerange()
+    {
+        float posY = _ySize / (_hacks.Count + 1);
+        float startPos = -_ySize;
+        for(int i = 0; i < _hacks.Count; i++)
+        {
+            _hacks[i].transform.localPosition = new Vector2(0, - _ySize/2 +(posY * (i+1)));
+        }
+    }
+
+    public void Sell(HackItemPrefab hack)
+    {
+        HackEffectBase item = hack.Hack;
+        _inventory.SellHack(item);
+        _hacks.Remove(hack);
+        Rerange();
+        Destroy(hack.gameObject);
     }
     private void OnDrawGizmosSelected()
     {

@@ -16,6 +16,7 @@ public class ShuffleManager : MonoBehaviour
         _deck.TakeList(newCard);
         _deck.Shuffle();
         _animator.AnimateShuffle(count);
+        _animator.AnimamteDeckShuffle(_deck.Card);
     }
 
 }

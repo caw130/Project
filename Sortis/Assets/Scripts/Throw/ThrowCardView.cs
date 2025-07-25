@@ -34,11 +34,8 @@ public class ThrowCardView : MonoBehaviour
             Destroy(card.gameObject);
         }
         _throwCards.Clear();
-        _backGround.DOScale(0, 0.5f).OnComplete(() =>
-        {
-            _panel.gameObject.SetActive(false);
-        });
-        
+        _panel.gameObject.SetActive(false);
+        _backGround.DOScale(0, 0.5f);
 
     }
     void Setsize()

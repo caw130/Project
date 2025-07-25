@@ -17,6 +17,8 @@ public enum GameEventType
     GameWin,
     UseItem,
     OpenStore,
+    SellItem,
+    HackInfo,
     Draw,
     Throw,
     RemoveHand,

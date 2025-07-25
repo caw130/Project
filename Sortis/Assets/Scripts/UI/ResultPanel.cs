@@ -23,7 +23,7 @@ public class ResultPanel : MonoBehaviour
     }
     public void Hide()
     {
-        _rectTransform.DOAnchorPos(_startPos, _showDuration).SetEase(Ease.OutBack).
+        _rectTransform.DOAnchorPos(_startPos, _showDuration).SetEase(Ease.InBack).
             OnComplete(() =>
             {
                 gameObject.SetActive(false);

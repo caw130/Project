@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -20,6 +21,11 @@ public class ShopItem : MonoBehaviour, IPointerClickHandler
 
     public void ItemSpawn(ItemData data)
     {
+        transform.DOKill();
+        transform.rotation = Quaternion.Euler(0, 0, 45f);
+        transform.DORotate(Vector3.zero, 0.5f).SetEase(Ease.OutElastic);
+        transform.localScale = Vector3.zero;
+        transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBounce);
         _data = data;
         _icon.sprite = _data.Icon;
         _goldText.text = $"{_data.Price}$";
@@ -34,5 +40,9 @@ public class ShopItem : MonoBehaviour, IPointerClickHandler
     {
         if(!_blank)
             _shop.BuyItem(_data,this);
+    }
+    public void Selling()
+    {
+
     }
 }
