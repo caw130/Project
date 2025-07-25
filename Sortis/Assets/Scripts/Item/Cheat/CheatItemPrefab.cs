@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class CheatItemPrefab : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] SpriteRenderer _renderer;
+    [SerializeField] CheatInventoryUi _inventory;
+    [SerializeField] CheatEffectBase _cheat;
 
-    // Update is called once per frame
-    void Update()
+    public void SpawnCheat(CheatEffectBase cheat, CheatInventoryUi inventory)
     {
-        
+        _cheat = cheat;
+        _inventory = inventory;
     }
 }

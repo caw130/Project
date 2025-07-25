@@ -9,7 +9,7 @@ public enum SoundType
 }
 
 [CreateAssetMenu(menuName = "GameData/SoundData")]
-public class SounData : MonoBehaviour
+public class SounData : ScriptableObject
 {
     [SerializeField] SoundType _type;
     [SerializeField] AudioClip _clip;
