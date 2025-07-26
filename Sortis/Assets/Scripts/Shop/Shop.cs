@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using static UnityEditor.Progress;
 
 public class Shop : MonoBehaviour
@@ -14,7 +15,7 @@ public class Shop : MonoBehaviour
     [SerializeField] ShopItem[] _hackItems;
     [SerializeField] ShopItem[] _cheatItems;
     [SerializeField] ShopInteractive _shopAnim;
-
+    [SerializeField] ShopItemInfo _shopItemInfo;
     int _rerollCost;
 
     public void Initialize()
@@ -81,12 +82,14 @@ public class Shop : MonoBehaviour
                 _inventory.GetHack(hack);
                 item.ChangeState(false);
                 _hackPool.ItemRemove(hack);
+                HideItemInfo();
             }
             else if (data is CheatData cheat)
             {
                 if (!_inventory.CanGetCheat) return;
                 _inventory.GetCheat(cheat);
                 item.ChangeState(false);
+                HideItemInfo();
             }
             GameEvent.Raise(GameEventType.BuyItem, data);
         }
@@ -97,5 +100,15 @@ public class Shop : MonoBehaviour
     {
         Goldmanager.Instance.GetGold(data.Price / 2);
         _hackPool.ItemAdd(data);
+    }
+
+    public void ShowItemInfo(ItemData data, Vector2 pos)
+    {
+        _shopItemInfo.Show(data, pos);
+    }
+
+    public void HideItemInfo()
+    {
+        _shopItemInfo.Hide();
     }
 }

@@ -6,11 +6,11 @@ public class Pocket : HackStatType
 {
     public override void Equip()
     {
-        Debug.Log("Âø¿ë");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½");
     }
 
     public override void Unequip()
     {
-        Debug.Log("¹ÌÂø¿ë");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
     }
 }

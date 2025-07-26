@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ShopItem : MonoBehaviour, IPointerClickHandler
+public class ShopItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] Image _icon;
     [SerializeField] TextMeshProUGUI _goldText;
@@ -41,8 +41,15 @@ public class ShopItem : MonoBehaviour, IPointerClickHandler
         if(!_blank)
             _shop.BuyItem(_data,this);
     }
-    public void Selling()
-    {
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Vector2 pos = new Vector2(transform.position.x - 300, transform.position.y-20);
+        _shop.ShowItemInfo(_data, pos);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        _shop.HideItemInfo();
     }
 }
