@@ -1,21 +1,50 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] ActionManager _actionManager;
-    void Start()
+    [SerializeField] SoundManager _soundManager;
+    [SerializeField] SceneChanger _sceneChanger;
+    public static GameManager Instance { get; set; }
+
+    public SoundManager SoundManager => _soundManager;
+    void Awake()
     {
-        _actionManager.Enable();
-        GameEvent.GameRestart += Restart;
-        _actionManager.GameStart();
-        Restart();
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(Instance);
+
+        }
+
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
 
-    public void Restart()
+    private void Start()
     {
-        _actionManager.RestartGame();
+        _soundManager.Initailize();
     }
 
+    public void ChangeScene(int num)
+    {
+        _sceneChanger.SceneChange(num);
+        
+    }
+    public Tween Hide()
+    {
+        return _sceneChanger.GetHide();
+    }
+
+    public void Show()
+    {
+        _sceneChanger.Show();
+    }
 }

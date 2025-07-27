@@ -32,6 +32,7 @@ public class ItemInventory : MonoBehaviour
         cheat.transform.position = transform.position;
         cheat.Initialize(data);
         _cheats.Add(cheat);
+        _cheatInventory.AddCheat(cheat);
     }
     public void InvokeHack(GameEventType type, object a = null, object b = null)
     {
@@ -40,7 +41,6 @@ public class ItemInventory : MonoBehaviour
         {
             if (hack is HackEventType eventhack)
             {
-                // 맞다면, 그 아이템의 이벤트 처리 함수를 호출
                 eventhack.OnGameEvent(type,a,b);
             }
         }
@@ -57,6 +57,7 @@ public class ItemInventory : MonoBehaviour
             Destroy(cheat.gameObject);
         }
         _cheats.Clear();
+        ResetInventory();
     }
     public void SellHack(HackEffectBase effectBase)
     {
@@ -67,5 +68,22 @@ public class ItemInventory : MonoBehaviour
         _shop.SellHack(effectBase.Data);
         _hacks.Remove(effectBase);
         Destroy(effectBase.gameObject);
+    }
+
+    public void SellCheat(CheatEffectBase cheatBase)
+    {
+        _shop.SellCheat(cheatBase.Data);
+        RemoveCheat(cheatBase);
+    }
+    public void RemoveCheat(CheatEffectBase cheatBase)
+    {
+        _cheats.Remove(cheatBase);
+        Destroy(cheatBase.gameObject);
+    }
+
+    public void ResetInventory()
+    {
+        _cheatInventory.ResetInventory();
+        _hackInvnetory.ResetInventory();
     }
 }

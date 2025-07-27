@@ -13,5 +13,6 @@ public class ZullCompleteManager : MonoBehaviour
         Goldmanager.Instance.GetGold(_rewardGold);
         UserStat.Instance.AddTotlaCompleteZull();
         completedzull.ZullCardsRemove();
+        GameManager.Instance.SoundManager.PlayClip(SoundType.ZullComplete);
     }
 }

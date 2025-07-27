@@ -34,7 +34,9 @@ public class Shop : MonoBehaviour
     public void ShopClose()
     {
         _shopAnim.Hide();
+        GameManager.Instance.SoundManager.PlayClip(SoundType.ShopClose);
         GameEvent.Raise(GameEventType.StartNewRound);
+
     }
     public void ShopOpen()
     {
@@ -43,6 +45,7 @@ public class Shop : MonoBehaviour
         _rerollCost = 5;
         _rerollText.text = $"Re Roll\r\n<color=#FFE62B>{_rerollCost}$</color>";
         _rerollClickText.text = _rerollText.text;
+        GameManager.Instance.SoundManager.PlayClip(SoundType.ShopOpen);
     }
     public void Reroll()
     {
@@ -53,6 +56,7 @@ public class Shop : MonoBehaviour
             _rerollText.text = $"Re Roll\r\n<color=#FFE62B>{_rerollCost}$</color>";
             _rerollClickText.text = _rerollText.text;
             GameEvent.Raise(GameEventType.ShopRerool);
+            GameManager.Instance.SoundManager.PlayClip(SoundType.ShopReroll);
         }
         
     }
@@ -92,6 +96,7 @@ public class Shop : MonoBehaviour
                 HideItemInfo();
             }
             GameEvent.Raise(GameEventType.BuyItem, data);
+            GameManager.Instance.SoundManager.PlayClip(SoundType.BuyItem);
         }
         
     }
@@ -100,8 +105,13 @@ public class Shop : MonoBehaviour
     {
         Goldmanager.Instance.GetGold(data.Price / 2);
         _hackPool.ItemAdd(data);
+        GameManager.Instance.SoundManager.PlayClip(SoundType.BuyItem);
     }
 
+    public void SellCheat(CheatData data)
+    {
+        Goldmanager.Instance.GetGold(data.Price / 2);
+    }
     public void ShowItemInfo(ItemData data, Vector2 pos)
     {
         _shopItemInfo.Show(data, pos);

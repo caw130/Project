@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HackItemPrefab : MonoBehaviour, ICanClick, ICanHover
+public class HackItemPrefab : MonoBehaviour, ICanClick
 {
     [SerializeField] SpriteRenderer _renderer;
     [SerializeField] HackInventoryUi _inventory;
     [SerializeField] HackEffectBase _hack;
     public bool Clickable { get; set; } = true;
-    public bool Hoverable { get; set; } = true;
     public HackEffectBase Hack => _hack;
 
     public void SpawnHack(HackEffectBase hack, HackInventoryUi inventory)
@@ -19,14 +18,7 @@ public class HackItemPrefab : MonoBehaviour, ICanClick, ICanHover
     }
     public void SellItem()
     {
-        _inventory.Sell(this);
-    }
-    public void HoverIn()
-    {
-    }
-
-    public void HoverOut()
-    {
+        _inventory.SellHack(this);
     }
 
     public void OnClicked()

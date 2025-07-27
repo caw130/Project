@@ -9,6 +9,5 @@ public class Ereaser : CheatEffectBase
     {
         _charges--;
         GameEvent.Raise(GameEventType.RemoveHand);
-        if (_charges <= 0) Destroy(gameObject);
     }
 }

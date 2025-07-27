@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -33,11 +34,16 @@ public class ResultScreenUi : MonoBehaviour
 
     public void restart()
     {
-        GameEvent.InvokeGameRestart();
+        GameManager.Instance.SoundManager.PlayClip(SoundType.ShopClose);
+        GameManager.Instance.Hide().OnComplete(() =>
+        {
+            GameEvent.InvokeGameRestart();
+            GameManager.Instance.Show();
+        });
     }
 
     public void GoToMainMenu()
     {
-        //SceneManager.LoadScene(0);
+        GameManager.Instance.ChangeScene(0);
     }
 }

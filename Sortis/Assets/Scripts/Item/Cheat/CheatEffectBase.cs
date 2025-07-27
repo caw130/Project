@@ -7,6 +7,8 @@ public abstract class CheatEffectBase : MonoBehaviour
 
     [SerializeField] protected CheatData _data;
     [SerializeField] protected int _charges;
+    public CheatData Data => _data;
+    public int Charges => _charges;
 
     public bool Clickable { get; set; } = true;
 

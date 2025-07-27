@@ -19,5 +19,6 @@ public class DiscardManager : MonoBehaviour
 
         cardToDiscard.transform.position = transform.position;
         cardToDiscard.DestroyCardWithAnimation();
+        GameManager.Instance.SoundManager.PlayClip(SoundType.CardDisCard);
     }
 }

@@ -7,7 +7,6 @@ public class CardAnim : MonoBehaviour
 {
     Vector3 _originalScale = new Vector3(1, 1, 1);
 
-    [Header("애니메이션 값")]
     [SerializeField] float _hoverScale;
     [SerializeField] float _moveSpeed;
     [SerializeField] float _maxTiltAngle;
@@ -31,20 +30,6 @@ public class CardAnim : MonoBehaviour
         targetTiltZ = Mathf.Clamp(targetTiltZ, -_maxTiltAngle, _maxTiltAngle);
 
         transform.DORotate(new Vector3(0, 0, -targetTiltZ), _moveSpeed);
-    }
-    public void Settransform(Transform tr)
-    {
-        _parentTransform = tr;
-    }
-    public void flip()
-    {
-        Vector3 targetRotation = transform.localEulerAngles + new Vector3(0, 180, 0);
-
-        Sequence flipSequence = DOTween.Sequence();
-
-        flipSequence.Append(transform.DORotate(targetRotation, 0.2f)
-            .SetEase(Ease.InQuad));
-        Debug.Log("짜란");
     }
 
     public void Selected()

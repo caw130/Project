@@ -50,7 +50,6 @@ public class ActionManager : MonoBehaviour
 
         if (_eventDepth >= MAX_EVENT_DEPTH)
         {
-            Debug.LogError("이벤트 재귀 깊이가 너무 깊습니다! 무한 루프 가능성이 있어 이벤트를 중단합니다:" + info.Type);
             _eventDepth--;
             return;
         }
@@ -68,9 +67,8 @@ public class ActionManager : MonoBehaviour
         {
             if (_eventDepth >= MAX_EVENT_DEPTH)
             {
-                Debug.LogError("이벤트 재귀 깊이 한계 도달! 남은 이벤트 큐를 모두 비웁니다.");
                 _eventQueue.Clear();
-                break; // while 루프 강제 종료
+                break;
             }
             GameActionInfo info = _eventQueue.Dequeue();
             ProcessAction(info);
@@ -132,6 +130,22 @@ public class ActionManager : MonoBehaviour
                 _uiManager.ShowHackInfo(type,a);
                 break;
 
+            case GameEventType.CheatInfo:
+                _uiManager.ShowCheatInfo(type, a);
+                break;  
+
+            case GameEventType.CheatInfoHide:
+                _uiManager.HIdeCheatInfo(type);
+                break;
+
+            case GameEventType.CheatUseShow:
+                _uiManager.ShowCheatUse(type, a);
+                break;
+
+            case GameEventType.CheatUseHide:
+                _uiManager.HideCheatUse(type);
+                break;
+
             case GameEventType.RoundEnded:
                 HandleRoundEnd();
                 break;
@@ -173,12 +187,14 @@ public class ActionManager : MonoBehaviour
         if(_roundManager.Round > _roundManager.MaxRound)
         {
             ChangeGameState(GameState.GameClear);
+            GameManager.Instance.SoundManager.PlayClip(SoundType.GameClear);
             return;
         }
 
         if (_throwDeck.ThrowCard > _throwDeck.MaxCard)
         {
             ChangeGameState(GameState.GameOver);
+            GameManager.Instance.SoundManager.PlayClip(SoundType.GameOver);
             return;
         }
     }

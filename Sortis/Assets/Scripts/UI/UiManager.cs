@@ -20,7 +20,8 @@ public class UiManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI _throwCrads;
     [SerializeField] TextMeshProUGUI _remainDeck;
     [SerializeField] HackInfo _hackInfo;
-    //[SerializeField] GameObject _throwCards;
+    [SerializeField] CheatItemInfo _cheatInfo;
+    [SerializeField] CheatUseUi _cheatUseUi;
 
     public void Initialize()
     {
@@ -41,7 +42,6 @@ public class UiManager : MonoBehaviour
 
     public void GameOverResult()
     {
-        Debug.Log("게임 오버");
         _resultBackground.gameObject.SetActive(true);
         _resultBackground.color = Color.clear;
         _resultBackground.DOColor(_gameoverColor,0.5f);
@@ -52,7 +52,6 @@ public class UiManager : MonoBehaviour
 
     public void GameClearResult()
     {
-        Debug.Log("게임 클리어");
         _resultBackground.gameObject.SetActive(true);
         _resultBackground.color = Color.clear;
         _resultBackground.DOColor(_gameClearColor, 0.5f);
@@ -60,23 +59,57 @@ public class UiManager : MonoBehaviour
         _resultPanel.Show();
     }
 
-    public void ResetUi()
-    {
-        _resultBackground.DOColor(Color.clear, 0.5f).
-            OnComplete(() => 
-            { 
-                _resultBackground.gameObject.SetActive(false); 
-            });
-        _resultPanel.Hide();
-        
-        SetText();
-    }
-
     public void ShowHackInfo(GameEventType type, object a)
     {
         if (type != GameEventType.HackInfo) return;
         if (!(a is HackItemPrefab hack)) return;
 
-        _hackInfo.Show(hack,hack.transform.position);
+        _hackInfo.Show(hack, hack.transform.position);
     }
+
+    public void ShowCheatInfo(GameEventType type, object a)
+    {
+        if(type != GameEventType.CheatInfo) return;
+        if(!(a is CheatItemPrefab cheat)) return;
+        _cheatInfo.Show(cheat, cheat.transform.position);
+    }
+
+    public void HIdeCheatInfo(GameEventType type)
+    {
+        if(type != GameEventType.CheatInfoHide) return;
+        _cheatInfo.Hide();
+    }
+
+    public void ShowCheatUse(GameEventType type, object a)
+    {
+        if (type != GameEventType.CheatUseShow) return;
+        if (!(a is CheatItemPrefab cheat)) return;
+        _cheatUseUi.Show(cheat, cheat.transform.position);
+    }
+    public void HideCheatUse(GameEventType type)
+    {
+        if(type != GameEventType.CheatUseHide) return;
+        _cheatUseUi.Hide();
+    }
+
+    public void HideUi()
+    {
+        _cheatInfo.Hide();
+        _cheatUseUi.Hide();
+        _hackInfo.Hide();
+        _resultPanel.Hide();
+    }
+
+    public void ResetUi()
+    {
+        _resultBackground.DOColor(Color.clear, 0.5f).
+            OnComplete(() =>
+            {
+                _resultBackground.gameObject.SetActive(false);
+            });
+
+        HideUi();
+        SetText();
+    }
+
 }

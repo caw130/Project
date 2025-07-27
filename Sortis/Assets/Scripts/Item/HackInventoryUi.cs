@@ -29,13 +29,22 @@ public class HackInventoryUi : MonoBehaviour
         }
     }
 
-    public void Sell(HackItemPrefab hack)
+    public void SellHack(HackItemPrefab hack)
     {
         HackEffectBase item = hack.Hack;
         _inventory.SellHack(item);
         _hacks.Remove(hack);
         Rerange();
         Destroy(hack.gameObject);
+    }
+
+    public void ResetInventory()
+    {
+        foreach(var hack in _hacks)
+        {
+            Destroy(hack.gameObject);
+        }
+        _hacks.Clear();
     }
     private void OnDrawGizmosSelected()
     {

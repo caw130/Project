@@ -16,9 +16,7 @@ public class Card : CardAttribute, ICanDrag, ICanClick, ICanHover
     public bool HasBeenOnZull { get; set; } = false;
     public ICardStacker Owner => _owner;
     public CardData Data => _data;
-    /// <summary>
-    /// 카드 스프라이트를 전환하는 함수
-    /// </summary>
+
     public void CardChanged()
     {
         _color = _data.Color;
@@ -29,11 +27,6 @@ public class Card : CardAttribute, ICanDrag, ICanClick, ICanHover
         _renderer.sprite = _data.Sprite;
     }
 
-    /// <summary>
-    /// 카드가 스폰 되었을 때 실행하는 함수
-    /// </summary>
-    /// <param name="suit">카드의 문양</param>
-    /// <param name="num">카드의 수</param>
     public void Setup(CardData data)
     {
         _data = data;
@@ -60,19 +53,15 @@ public class Card : CardAttribute, ICanDrag, ICanClick, ICanHover
     }
     public void DestroyCardWithAnimation()
     {
-        // 혹시 다른 애니메이션이 실행 중일 수 있으니, 먼저 중지시켜 줍니다.
         transform.DOKill();
 
-        // 1. 시퀀스를 만들어 여러 애니메이션을 동시에 실행합니다.
         Sequence destroySequence = DOTween.Sequence();
+        destroySequence.Join(transform.DOScale(0f, 0.5f).SetEase(Ease.InBack)); 
 
-        // 2. 0.5초 동안 투명해지는 애니메이션과 작아지는 애니메이션을 동시에 실행합니다.
-        destroySequence.Join(transform.DOScale(0f, 0.5f).SetEase(Ease.InBack)); // 0배로 작아짐
 
-        // 3. (핵심) 위의 모든 애니메이션이 끝나면, OnComplete 안의 코드를 실행합니다.
         destroySequence.OnComplete(() =>
         {
-            // 이 게임 오브젝트를 파괴합니다.
+
             Destroy(gameObject);
         });
     }
@@ -81,6 +70,7 @@ public class Card : CardAttribute, ICanDrag, ICanClick, ICanHover
     {
         SetSorting(100);
         GameEvent.Raise(GameEventType.CardDrag, this, _owner);
+        GameManager.Instance.SoundManager.PlayClip(SoundType.CardClick);
     }
     public void OnDrag(Vector2 pos)
     {
@@ -89,11 +79,12 @@ public class Card : CardAttribute, ICanDrag, ICanClick, ICanHover
     public void OnDrop()
     {
         GameEvent.Raise(GameEventType.CardDrop, this, transform.position);
+        GameManager.Instance.SoundManager.PlayClip(SoundType.CardPlace);
         SetSorting(1);
     }
     #endregion
 
-    // 클릭
+
     public void OnClicked()
     {
     }
