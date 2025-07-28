@@ -145,8 +145,8 @@ MonoBehaviour:
   _hoverScale: 1.2
   _moveSpeed: 0.15
   _maxTiltAngle: 50
-  _tiltDex: 250
-  _moveEase: 6
+  _tiltDex: 50
+  _moveEase: 12
 --- !u!1 &7759827305979470723
 GameObject:
   m_ObjectHideFlags: 0

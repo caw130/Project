@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
         else
         {
+            Debug.Log("Hello");
             Destroy(gameObject);
             return;
         }

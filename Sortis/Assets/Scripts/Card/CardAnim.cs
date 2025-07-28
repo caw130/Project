@@ -19,7 +19,7 @@ public class CardAnim : MonoBehaviour
     {
         _parentTransform = transform.parent;
     }
-    private void Update()
+    private void FixedUpdate()
     {
         transform.DOMove(_parentTransform.position, _moveSpeed).SetEase(_moveEase);
 

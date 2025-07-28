@@ -55,4 +55,7 @@ public static class GameEvent
 
     public static event Action GameRestart;
     public static void InvokeGameRestart() => GameRestart?.Invoke();
+
+    public static event Action GoMain;
+    public static void InvokeGoMain() => GoMain?.Invoke();
 }

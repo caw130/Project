@@ -43,6 +43,11 @@ public class ActionManager : MonoBehaviour
     {
         GameEvent.OnGameAction += AddActionToQueue;
     }
+    public void Disable()
+    {
+        Debug.Log("리셋");
+        GameEvent.OnGameAction -= AddActionToQueue;
+    }
 
     void ProcessAction(GameActionInfo info)
     {

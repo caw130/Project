@@ -44,6 +44,7 @@ public class ResultScreenUi : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        GameManager.Instance.ChangeScene(0);
+        GameEvent.InvokeGoMain();
+        
     }
 }
