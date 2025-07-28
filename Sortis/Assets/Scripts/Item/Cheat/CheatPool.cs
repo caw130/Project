@@ -6,10 +6,6 @@ public class CheatPool : MonoBehaviour
 {
     [SerializeField] List<CheatData> _datas;
 
-    public void InitalizePool()
-    {
-
-    }
     public List<CheatData> GiveCheat(int count)
     {
         List<CheatData> shopItems = new List<CheatData>();

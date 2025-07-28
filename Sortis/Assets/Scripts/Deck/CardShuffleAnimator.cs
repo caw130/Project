@@ -39,24 +39,25 @@ public class CardShuffleAnimator : MonoBehaviour
 
     public void AnimamteDeckShuffle(int count)
     {
+        Sequence shuffleSequence = DOTween.Sequence();
         for (int i = 0; i < count; i++)
         {
-            Sequence shuffleSequence = DOTween.Sequence();
-            GameObject cardObject = Instantiate(_effectCardPrefab, _shuffleStart.position, _shuffleStart.rotation);
+            
+            GameObject cardObject = Instantiate(_effectCardPrefab, _shuffleStart.position, _shuffleStart.rotation, _shuffleStart);
 
-
-            Tween cardRotateTween = cardObject.transform.DORotate(Vector3.zero, _moveDuration).
+            Tween  cardMoveTween = cardObject.transform.DOMove(_deckPosition.position, _moveDuration / 2).SetEase(_ease).
                 OnStart(() =>
                 {
                     GameManager.Instance.SoundManager.PlayClip(SoundType.Shuffle);
                 });
-            Tween cardMoveTween = cardObject.transform.DOMove(_deckPosition.position, _moveDuration / 2).SetEase(_ease).
+            Tween cardRotateTween = cardObject.transform.DORotate(Vector3.zero, _moveDuration).
                 OnComplete(() =>
                 {
                     Destroy(cardObject);
                 });
             shuffleSequence.Insert(i * _delayBetweenCards / 2, cardMoveTween);
             shuffleSequence.Join(cardRotateTween);
+
         }
     }
 }

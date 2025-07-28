@@ -59,7 +59,7 @@ public class Deck : MonoBehaviour
     void SetRender()
     {
         _haveCard = _deck.Count > 0;
-        _renderer.enabled = _haveCard;
+        _renderer.gameObject.SetActive(_haveCard);
     }
 
     public void ClearDeck()

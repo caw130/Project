@@ -21,6 +21,7 @@ public class CardAnim : MonoBehaviour
     }
     private void FixedUpdate()
     {
+
         transform.DOMove(_parentTransform.position, _moveSpeed).SetEase(_moveEase);
 
         Vector3 parentMoveDelta = _parentTransform.position - _lastParentPosition;
@@ -29,7 +30,7 @@ public class CardAnim : MonoBehaviour
         float targetTiltZ = -parentMoveDelta.x * _tiltDex;
         targetTiltZ = Mathf.Clamp(targetTiltZ, -_maxTiltAngle, _maxTiltAngle);
 
-        transform.DORotate(new Vector3(0, 0, -targetTiltZ), _moveSpeed);
+        transform.DORotate(new Vector3(0, 0, -targetTiltZ ), _moveSpeed);
     }
 
     public void Selected()
