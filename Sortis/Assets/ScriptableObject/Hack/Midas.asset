@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbda4fdba91267c4d86ab01335eacb3e, type: 3}
   m_Name: Midas
   m_EditorClassIdentifier: 
-  _name: "\uBBF8\uB2E4\uC2A4"
+  _name: "\uB3C8\uC8FC\uBA38\uB2C8"
   _description: "\uCE74\uB4DC\uB97C \uB0BC \uB54C 2 \uACE8\uB4DC\uB97C \uB354 \uC90D\uB2C8\uB2E4."
-  _icon: {fileID: 21300000, guid: cb561713c802ede48be658bf3f691fe9, type: 3}
+  _icon: {fileID: -16108646, guid: 2bc0823cc3473bc488fab3e0c7d97f42, type: 3}
   _price: 1
   _itemNum: 0
   _rarity: 1

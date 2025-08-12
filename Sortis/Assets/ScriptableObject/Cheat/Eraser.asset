@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1599ae9f6733104faf406fdf701c671, type: 3}
   m_Name: Eraser
   m_EditorClassIdentifier: 
-  _name: "\uC9C0\uC6B0\uAC1C"
+  _name: "\uCE74\uB4DC\uC81C\uAC70\uC6A9\uC561"
   _description: "\uC190\uC5D0 \uC788\uB294 \uCE74\uB4DC\uB97C \uC9C0\uC6C1\uB2C8\uB2E4."
-  _icon: {fileID: 21300000, guid: e17b8fd782a8b1f43b9c969b766c4931, type: 3}
+  _icon: {fileID: 90828177, guid: 2bc0823cc3473bc488fab3e0c7d97f42, type: 3}
   _price: 2
   _charges: 1
   _cheatPrefab: {fileID: 1903940017735999098, guid: 022359654d1fadd4fa417d941ed4b89f, type: 3}

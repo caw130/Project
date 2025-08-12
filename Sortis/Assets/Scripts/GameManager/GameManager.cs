@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] SoundManager _soundManager;
     [SerializeField] SceneChanger _sceneChanger;
+
     public static GameManager Instance { get; set; }
 
     public SoundManager SoundManager => _soundManager;
