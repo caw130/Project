@@ -12,6 +12,10 @@ public class MainMenuPanel : MonoBehaviour
         GameManager.Instance.ChangeScene(1);
         _gameStart = true;
     }
+    public void OptionOpen()
+    {
+        GameManager.Instance.ShowOption();
+    }
     public void GameQuit()
     {
         Application.Quit();

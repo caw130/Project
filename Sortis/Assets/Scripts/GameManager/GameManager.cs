@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] SoundManager _soundManager;
     [SerializeField] SceneChanger _sceneChanger;
+    [SerializeField] OptionMenu _optionMenu;
 
     public static GameManager Instance { get; set; }
 
@@ -24,7 +25,6 @@ public class GameManager : MonoBehaviour
 
         else
         {
-            Debug.Log("Hello");
             Destroy(gameObject);
             return;
         }
@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeScene(int num)
     {
+        _optionMenu.Close();
         _sceneChanger.SceneChange(num);
         
     }
@@ -48,5 +49,14 @@ public class GameManager : MonoBehaviour
     public void Show()
     {
         _sceneChanger.Show();
+    }
+
+    public void ShowOption()
+    {
+        _optionMenu.Open();
+    }
+    public void HideOption()
+    {
+        _optionMenu.Close();
     }
 }

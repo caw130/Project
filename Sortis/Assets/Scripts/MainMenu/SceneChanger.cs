@@ -9,8 +9,11 @@ public class SceneChanger : MonoBehaviour
 {
     [SerializeField] Image _image;
     [SerializeField] float _changeSpeed;
+    int _currentScnene = -1;
     public void SceneChange(int num)
     {
+        if (num == _currentScnene) return;
+        _currentScnene = num;
         GameManager.Instance.SoundManager.PlayClip(SoundType.SceneChange);
         _image.DOFillAmount(1, _changeSpeed).OnComplete(() =>
         {
