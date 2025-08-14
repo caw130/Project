@@ -35,7 +35,6 @@ public class HackInventoryUi : MonoBehaviour
         _inventory.SellHack(item);
         _hacks.Remove(hack);
         Rerange();
-        Destroy(hack.gameObject);
     }
 
     public void ResetInventory()

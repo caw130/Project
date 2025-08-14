@@ -6,14 +6,13 @@ using UnityEngine;
 public class ItemInventory : MonoBehaviour
 {
     [SerializeField] int _maxHack;
-    [SerializeField] int _maxCheat;
     [SerializeField] List<HackEffectBase> _hacks = new List<HackEffectBase>();
     [SerializeField] List<CheatEffectBase> _cheats = new List<CheatEffectBase>();
     [SerializeField] HackInventoryUi _hackInvnetory;
     [SerializeField] CheatInventoryUi _cheatInventory;
     [SerializeField] Shop _shop;
     public bool CanGetHack => _hacks.Count < _maxHack;
-    public bool CanGetCheat => _cheats.Count < _maxCheat;
+    public bool CanGetCheat => _cheats.Count < UserStat.Instance.MaxCheatSize;
     public void GetHack(HackData data)
     {
         HackEffectBase hack = Instantiate(data.HackPrefab);

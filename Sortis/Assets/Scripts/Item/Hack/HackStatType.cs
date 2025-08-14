@@ -5,5 +5,7 @@ using UnityEngine;
 public abstract class HackStatType : HackEffectBase
 {
     public abstract void Equip();
+        
+       
     public abstract void Unequip();
 }

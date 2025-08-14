@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 
 /// <summary>
 /// 게임 내부에 있는 드래그, 클릭, 호버 등을 관리하는 스크립트.

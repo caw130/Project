@@ -12,12 +12,14 @@ public class Alpha : HackEventType
             if(type == GameEventType.FirstTypeCardDrop)
             {
                 stack++;
+                InvokeOnUsed();
             }
             if(type == GameEventType.OnCardDiscard)
             {
                 if(stack >=3)
                 {
                     GameEvent.Raise(GameEventType.RemoveLastThrow);
+                    InvokeOnUsed();
                 }
                 stack = 0;
             }

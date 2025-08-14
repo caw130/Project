@@ -35,7 +35,6 @@ public class CheatInventoryUi : MonoBehaviour
         _inventory.RemoveCheat(item);
         _cheats.Remove(cheat);
         Rerange();
-        Destroy(cheat.gameObject);
     }
     public void SellCheat(CheatItemPrefab cheat)
     {
@@ -43,7 +42,6 @@ public class CheatInventoryUi : MonoBehaviour
         _inventory.SellCheat(item);
         _cheats.Remove(cheat);
         Rerange();
-        Destroy(cheat.gameObject);
     }
     public void ResetInventory()
     {

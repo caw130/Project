@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbda4fdba91267c4d86ab01335eacb3e, type: 3}
   m_Name: Pocket
   m_EditorClassIdentifier: 
-  _name: "\uC544\uC774\uD15C \uC5C5\uB370\uC774\uD2B8"
-  _description: "\uC544\uC774\uD15C \uBC30\uC5F4\uC5D0 \uC544\uC774\uD15C\uC774 \uC5C6\uC5B4\uC694
-    \u3160\u3160"
-  _icon: {fileID: 21300000, guid: eaac1cb3bce896242adbf012e27e9816, type: 3}
-  _price: 0
+  _name: "\uC8FC\uBA38\uB2C8"
+  _description: "\uC190\uC5D0 \uAC00\uC9C8 \uC218 \uC788\uB294 \uCE74\uB4DC\uC758
+    \uC218\uAC00 1 \uC99D\uAC00\uD55C\uB2E4."
+  _icon: {fileID: -1292947661, guid: 2bc0823cc3473bc488fab3e0c7d97f42, type: 3}
+  _price: 5
   _itemNum: 0
   _rarity: 0
   _type: 1
   _trigger: 
   _hackPrefab: {fileID: 3223960206437497873, guid: 88c30acf17ef57349b4e55f1a529b583, type: 3}
+  _imageSize: {x: 0, y: 0, z: 0}

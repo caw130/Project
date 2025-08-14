@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class CardShuffleAnimator : MonoBehaviour
 {
-    [Header("�ִϸ��̼� ����")]
     [SerializeField] GameObject _effectCardPrefab;
     [SerializeField] Transform _discardPilePosition;
     [SerializeField] Transform _deckPosition;

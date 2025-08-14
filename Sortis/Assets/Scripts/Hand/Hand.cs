@@ -9,7 +9,6 @@ public class Hand : MonoBehaviour, ICardStacker
     [SerializeField] float _yuiSize;
     [SerializeField] float _xuiSize;
     [SerializeField] float _cardDepth;
-    [SerializeField] int _maxHandSize;
     [SerializeField] List<Card> _drawCard;
     [SerializeField] ThrowDeck _throwDeck;
     /// <summary>
@@ -73,7 +72,7 @@ public class Hand : MonoBehaviour, ICardStacker
             card.CardParent(this);
             _drawCard.Add(card);
         }
-        while(_maxHandSize < _drawCard.Count)
+        while(UserStat.Instance.HandSize < _drawCard.Count)
         {
             DiscardCard();
         }

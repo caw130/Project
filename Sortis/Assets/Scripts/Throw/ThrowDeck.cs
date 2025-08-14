@@ -8,13 +8,12 @@ public class ThrowDeck : MonoBehaviour, ICanClick
 {
     [SerializeField] List<CardData> _throwCards;
     [SerializeField] SpriteRenderer _renderer;
-    [SerializeField] int _maxCard;
     [SerializeField] ThrowCardView _cardView;
     bool _haveCard;
     public bool Clickable { get; set; } = false;
 
     public int ThrowCard => _throwCards.Count;
-    public int MaxCard => _maxCard;
+    public int MaxCard => UserStat.Instance.MaxThrowCard;
 
     private void Update()
     {

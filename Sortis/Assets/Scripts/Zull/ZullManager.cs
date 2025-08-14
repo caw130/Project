@@ -9,7 +9,6 @@ public class ZullManager : MonoBehaviour
     [SerializeField] Zull _zullPrefab;
     [SerializeField] List<Zull> _zulls = new List<Zull>();
     [SerializeField] List<Zull> _canPlacezulls = new List<Zull>();
-    [SerializeField] int _haveZull;
     [SerializeField] float _placeDistance;
     [SerializeField] float _xdistance;
     [SerializeField] float _ydistance;
@@ -21,7 +20,7 @@ public class ZullManager : MonoBehaviour
 
     public void SetZulls()
     {
-        for(int i = 0; i < _haveZull; i++)
+        for(int i = 0; i < UserStat.Instance.MaxZull; i++)
         {
             _zulls.Add(Instantiate(_zullPrefab, transform));
         }

@@ -22,10 +22,12 @@ public class HackData : ItemData
     [SerializeField] HackType _type;
     [SerializeField] List<GameEventType> _trigger;
     [SerializeField] HackEffectBase _hackPrefab;
+    [SerializeField] Vector3 _imageSize;
 
     public int ItemNum => _itemNum;
     public ItemRarity Rarity => _rarity;
     public HackType Type => _type;
     public List<GameEventType> Trigger => _trigger;
     public HackEffectBase HackPrefab => _hackPrefab;
+    public Vector3 ImageSize => _imageSize;
 }

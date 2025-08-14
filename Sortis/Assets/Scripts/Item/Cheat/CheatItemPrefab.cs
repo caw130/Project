@@ -1,6 +1,8 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CheatItemPrefab : MonoBehaviour, ICanClick, ICanHover
 {
@@ -35,10 +37,15 @@ public class CheatItemPrefab : MonoBehaviour, ICanClick, ICanHover
     public void UseCheat()
     {
         _cheat.Use();
+        transform.localScale = new Vector3(2,2,2);
+        transform.DOKill();
+        transform.DOShakeScale(1, new Vector3(1,1,1), 10);
         if (_cheat.Charges <= 0)
         {
+            transform.DOKill();
             _inventory.RemoveCheat(this);
             GameEvent.Raise(GameEventType.CheatUseHide);
+            RemoveCheat();
         }
     }
 
@@ -46,6 +53,12 @@ public class CheatItemPrefab : MonoBehaviour, ICanClick, ICanHover
     {
         _inventory.SellCheat(this);
         GameEvent.Raise(GameEventType.CheatUseHide);
+        RemoveCheat();
+    }
+
+    void RemoveCheat()
+    {
+        transform.transform.DOScale(new Vector3(3, 3, 3), 0.1f).OnComplete(()=> transform.DOScale(Vector3.zero, 0.2f).OnComplete(() => Destroy(this.gameObject)));
     }
 
 }

@@ -2684,7 +2684,6 @@ MonoBehaviour:
   _yuiSize: 3
   _xuiSize: 2
   _cardDepth: -0.05
-  _maxHandSize: 3
   _drawCard: []
   _throwDeck: {fileID: 1287091398}
 --- !u!1 &382885782
@@ -4721,7 +4720,6 @@ RectTransform:
   - {fileID: 1074926217}
   - {fileID: 1220475181}
   - {fileID: 661092822}
-  - {fileID: 838103175}
   - {fileID: 1696624310}
   - {fileID: 1865521451}
   - {fileID: 1147479963}
@@ -6032,7 +6030,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHack: 6
-  _maxCheat: 3
   _hacks: []
   _cheats: []
   _hackInvnetory: {fileID: 1304599946}
@@ -6047,11 +6044,11 @@ Transform:
   m_GameObject: {fileID: 838103173}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -960.28925, y: -540.00006, z: 0}
-  m_LocalScale: {x: 2.6024098, y: 2.6024098, z: 2.6024098}
+  m_LocalPosition: {x: -0.000030517578, y: -0.000015258789, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 677842466}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &856426053
 GameObject:
@@ -9144,7 +9141,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _throwCards: []
   _renderer: {fileID: 1287091401}
-  _maxCard: 20
   _cardView: {fileID: 1788562098}
 --- !u!4 &1287091399
 Transform:
@@ -13255,7 +13251,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  _haveZull: 6
   _placeDistance: 1
   _xdistance: 6
   _ydistance: 1.5
@@ -16532,6 +16527,7 @@ SceneRoots:
   - {fileID: 382683753}
   - {fileID: 1853912893}
   - {fileID: 230327442}
+  - {fileID: 838103175}
   - {fileID: 677842466}
   - {fileID: 1138152410}
   - {fileID: 1304599947}

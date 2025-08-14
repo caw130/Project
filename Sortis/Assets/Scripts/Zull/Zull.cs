@@ -109,7 +109,7 @@ public class Zull : MonoBehaviour, ICardStacker
     {
         if (!(startCard is Card startingCard))
         {
-            // 드래그 대상이 카드가 아니면 빈 리스트 반환
+            
             return new List<Card>();
         }
 
@@ -117,7 +117,7 @@ public class Zull : MonoBehaviour, ICardStacker
 
         if (startIndex == -1)
         {
-            // 이동할 수 없음을 '빈 리스트' 반환으로 알림
+            
             return new List<Card>();
         }
 
@@ -137,9 +137,9 @@ public class Zull : MonoBehaviour, ICardStacker
     }
     public void CheckZullComplete()
     {
-        if (_cards.Count < 13) return;
+        if (_cards.Count < UserStat.Instance.ZullNeedCard) return;
         GameEvent.Raise(GameEventType.ZullComplete, this);
-        //GameEvent.RaiseZullCompleted(this);
+        
     }
     private void OnDrawGizmosSelected()
     {
