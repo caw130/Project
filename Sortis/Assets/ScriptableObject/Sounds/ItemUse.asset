@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 722fbfd0dfaed0a4b96d1ff09e15693c, type: 3}
-  m_Name: New Soun Data
+  m_Name: ItemUse
   m_EditorClassIdentifier: 
-  _type: 9
-  _clip: {fileID: 8300000, guid: 338e9ce5a09baf94ba0b47b25a65346b, type: 3}
+  _type: 15
+  _clip: {fileID: 8300000, guid: 4c14690e0929e9b4bbf8d3a54ae3a73d, type: 3}

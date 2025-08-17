@@ -34,7 +34,6 @@ public class ItemInventory : MonoBehaviour
     }
     public void InvokeHack(GameEventType type, object a = null, object b = null)
     {
-        
         foreach (var hack in _hacks)
         {
             if (hack is HackEventType eventhack)

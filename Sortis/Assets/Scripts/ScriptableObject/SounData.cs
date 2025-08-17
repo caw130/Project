@@ -19,6 +19,8 @@ public enum SoundType
     CardDisCard,
     Draw,
     SceneChange,
+    ItemUse,
+    ButtonClick,
 }
 
 [CreateAssetMenu(menuName = "GameData/SoundData")]
