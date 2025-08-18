@@ -11,6 +11,8 @@ public class Hand : MonoBehaviour, ICardStacker
     [SerializeField] float _cardDepth;
     [SerializeField] List<Card> _drawCard;
     [SerializeField] ThrowDeck _throwDeck;
+
+    public List<Card> Cards => _drawCard;
     /// <summary>
     /// 카드들의 위치를 손에서 재 배열
     /// </summary>
@@ -56,7 +58,7 @@ public class Hand : MonoBehaviour, ICardStacker
         }
     }
 
-
+    
 
     public List<Card> SplitStackFrom(Card startCard)
     {

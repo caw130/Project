@@ -15,7 +15,6 @@ public class CardShuffleAnimator : MonoBehaviour
     public void AnimateShuffle(int count)
     {
         Sequence shuffleSequence = DOTween.Sequence();
-
         for (int i = 0; i < count; i++)
         {
             GameObject cardObject = Instantiate(_effectCardPrefab, _discardPilePosition.position, Quaternion.identity, _cardDiscardPoint);

@@ -15,11 +15,11 @@ public class UserStat : MonoBehaviour
     int _totalGold;
     int _totalUsedCard;
     int _totalCompletedZull;
-    int _maxZull = 6;
-    int _zullNeedCard = 13;
-    int _handSize = 3;
-    int _maxCheatSize = 3;
-    int _maxThrowCard = 20;
+    [SerializeField]int _maxZull = 6;
+    [SerializeField]int _zullNeedCard = 13;
+    [SerializeField]int _handSize = 3;
+    [SerializeField]int _maxCheatSize = 3;
+    [SerializeField]int _maxThrowCard = 20;
 
     public int TotalGold => _totalGold;
     public int TotalUsedCard => _totalUsedCard;

@@ -22,6 +22,7 @@ public class ThrowDeck : MonoBehaviour, ICanClick
     public void CardDiscard(CardData throwCard)
     {
         _throwCards.Add(throwCard);
+        if (_throwCards.Count > MaxCard) GameEvent.Raise(GameEventType.GameOver);
     }
     public void OnClicked()
     {

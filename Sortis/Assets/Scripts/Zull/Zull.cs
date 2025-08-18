@@ -8,6 +8,7 @@ public class Zull : MonoBehaviour, ICardStacker
     [SerializeField] float _cardDistance;
     [SerializeField] float _cardDepth;
     [SerializeField] List<Card> _cards = new List<Card>();
+    public bool HaveCard => _cards.Count > 0;
     public Vector3 InteractPoint
     {
         get

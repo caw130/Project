@@ -1535,6 +1535,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd3d0cbd8fcc7cc4686eafc6b4305530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxZull: 6
+  _zullNeedCard: 13
+  _handSize: 3
+  _maxCheatSize: 3
+  _maxThrowCard: 20
 --- !u!1 &258286338
 GameObject:
   m_ObjectHideFlags: 0
@@ -15436,6 +15441,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _datas:
   - {fileID: 11400000, guid: d0565e7cf9c606f4589e54a36a8aeef4, type: 2}
+  - {fileID: 11400000, guid: a8b6381e1bbfa1c4b907d1a624ef4b0c, type: 2}
+  - {fileID: 11400000, guid: 10907692f2f13b948986a18b0cffb5bb, type: 2}
+  - {fileID: 11400000, guid: 1c591c486ae6a89418ca657b6b4bc20f, type: 2}
 --- !u!114 &2118281329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15452,6 +15460,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9f864ca592a31c641af8f4fed0897648, type: 2}
   - {fileID: 11400000, guid: 70cc2c5eeedbaee4e9141cc136d28daa, type: 2}
   - {fileID: 11400000, guid: b3caa2cfab2214d4aa8ef075086d8ad3, type: 2}
+  - {fileID: 11400000, guid: 010000840b9da1f4885284d569d5658f, type: 2}
+  - {fileID: 11400000, guid: 56574a6fce0205b4ab1c7204ec3daa2d, type: 2}
   _availableItems: []
 --- !u!4 &2118281330
 Transform:
@@ -16517,21 +16527,21 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 2118281330}
+  - {fileID: 1068683026}
+  - {fileID: 230327442}
   - {fileID: 519420032}
   - {fileID: 8726183}
   - {fileID: 961415529}
   - {fileID: 1719142005}
   - {fileID: 1353924644}
-  - {fileID: 1068683026}
   - {fileID: 1287091399}
   - {fileID: 382683753}
   - {fileID: 1853912893}
-  - {fileID: 230327442}
   - {fileID: 838103175}
   - {fileID: 677842466}
   - {fileID: 1138152410}
   - {fileID: 1304599947}
-  - {fileID: 2118281330}
   - {fileID: 1541142502}
   - {fileID: 427266732}
   - {fileID: 492831451}

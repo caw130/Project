@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1599ae9f6733104faf406fdf701c671, type: 3}
-  m_Name: Capsule
+  m_Name: Wiskey
   m_EditorClassIdentifier: 
-  _name: "\uC774\uC0C1\uD55C \uC57D"
-  _description: "\uBB34\uC791\uC704 \uC904\uC758 \uCE74\uB4DC\uB97C \uC804\uBD80
-    \uC81C\uAC70\uD569\uB2C8\uB2E4."
-  _icon: {fileID: -55229256, guid: 2bc0823cc3473bc488fab3e0c7d97f42, type: 3}
-  _price: 5
+  _name: "\uB354 \uB3C5\uD55C \uC220"
+  _description: "\uBC84\uB9B0 \uCE74\uB4DC\uB97C \uB371\uC5D0 \uC11E\uC2B5\uB2C8\uB2E4."
+  _icon: {fileID: 21300000, guid: 36c5c2d32d6e5834ebf3d84ae5c8b01e, type: 3}
+  _price: 7
   _charges: 1
-  _cheatPrefab: {fileID: 7571474369160223840, guid: c1a35c1dc0d537b4a956ab5c4e7287dd, type: 3}
+  _cheatPrefab: {fileID: 2424546075978647119, guid: 8bf049d62a3d80a4bbdfa4229b6129ca, type: 3}

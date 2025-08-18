@@ -29,6 +29,11 @@ public enum GameEventType
     BuyItem,
     ShopRerool,
     RemoveLastThrow,
+    RemoveRandomZull,
+    ClearThrowDeck,
+    HackRemove,
+    HandReturn,
+    ThrowCradShuffle,
 }
 
 public struct GameActionInfo

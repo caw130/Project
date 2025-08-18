@@ -43,4 +43,15 @@ public class DrawManager : MonoBehaviour, ICanClick
         _card.SetState(false);
         _card.SetSorting(1);
     }
+
+    public void ReturnCard()
+    {
+        List<CardData> cards = new List<CardData>();
+        foreach(var card in _hands.Cards)
+        {
+            cards.Add(card.Data);
+        }
+        _deck.TakeList(cards);
+        _hands.ClearHand();
+    }
 }

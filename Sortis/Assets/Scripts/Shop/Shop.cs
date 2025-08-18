@@ -107,6 +107,11 @@ public class Shop : MonoBehaviour
         GameManager.Instance.SoundManager.PlayClip(SoundType.BuyItem);
     }
 
+    public void RemoveHack(HackData data)
+    {
+        _hackPool.ItemAdd(data);
+    }
+
     public void SellCheat(CheatData data)
     {
         Goldmanager.Instance.GetGold(data.Price / 2);

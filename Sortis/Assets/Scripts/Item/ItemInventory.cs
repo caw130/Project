@@ -83,4 +83,12 @@ public class ItemInventory : MonoBehaviour
         _cheatInventory.ResetInventory();
         _hackInvnetory.ResetInventory();
     }
+
+    public void RemoveHack(GameEventType type, object a)
+    {
+        if (type != GameEventType.HackRemove) return;
+        if (!(a is HackEffectBase hack)) return;
+        _shop.RemoveHack(hack.Data);
+        _hacks.Remove(hack);
+    }
 }

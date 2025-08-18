@@ -49,20 +49,6 @@ public class ActionManager : MonoBehaviour
         GameEvent.OnGameAction -= AddActionToQueue;
     }
 
-    void ProcessAction(GameActionInfo info)
-    {
-        _eventDepth++;
-
-        if (_eventDepth >= MAX_EVENT_DEPTH)
-        {
-            _eventDepth--;
-            return;
-        }
-
-        OnAction(info.Type, info.A, info.B);
-
-        _eventDepth--;
-    }
     void ProcessQueue()
     {
         _isProcessingQueue = true;
@@ -73,10 +59,12 @@ public class ActionManager : MonoBehaviour
             if (_eventDepth >= MAX_EVENT_DEPTH)
             {
                 _eventQueue.Clear();
+                _eventDepth = 0;
                 break;
             }
             GameActionInfo info = _eventQueue.Dequeue();
-            ProcessAction(info);
+            OnAction(info.Type, info.A, info.B);
+            _eventDepth--;
         }
 
         _isProcessingQueue = false;
@@ -88,7 +76,7 @@ public class ActionManager : MonoBehaviour
     private void AddActionToQueue(GameActionInfo info)
     {
         _eventQueue.Enqueue(info);
-
+        _eventDepth++;
         // 만약 현재 큐를 처리하고 있지 않다면, 즉시 처리를 시작합니다.
         if (!_isProcessingQueue)
         {
@@ -125,7 +113,10 @@ public class ActionManager : MonoBehaviour
                 break;
             case GameEventType.ZullComplete:
                 _zullCompleteManager.HandleZullCompletion(type, a);
-                
+                break;
+
+            case GameEventType.RemoveRandomZull:
+                _zullManager.RemoveRandomZull(type);
                 break;
 
             case GameEventType.RoundStarted:
@@ -182,6 +173,18 @@ public class ActionManager : MonoBehaviour
                 break;
             case GameEventType.RemoveHand:
                 _hand.ClearHand();
+                break;
+            case GameEventType.ClearThrowDeck:
+                _throwDeck.Clear();
+                break;
+            case GameEventType.HackRemove:
+                _itemInventory.RemoveHack(type, a);
+                break;
+            case GameEventType.HandReturn:
+                _drawManager.ReturnCard();
+                break;
+            case GameEventType.ThrowCradShuffle:
+                _shuffle.ShuffleDeck();
                 break;
         }
         _itemInventory.InvokeHack(type, a, b);
@@ -241,7 +244,7 @@ public class ActionManager : MonoBehaviour
         _roundManager.AddRound();
         CheckGameState();
         if (_gameState == GameState.GameClear || _gameState == GameState.GameOver) return;
-        _shuffle.ShuffleDeck();
+        _shuffle.MakeAndShuffleDeck();
         _uiManager.SetText();
         ChangeGameState(GameState.Shop);
         _shop.ShopOpen();

@@ -84,6 +84,23 @@ public class ZullManager : MonoBehaviour
         }
     }
 
+    public void RemoveRandomZull(GameEventType type)
+    {
+        if (type != GameEventType.RemoveRandomZull) return;
+        List<Zull> zulls = new List<Zull>();
+        foreach(var zull in _zulls)
+        {
+            if (zull.HaveCard)
+            {
+                zulls.Add(zull);
+            }
+        }
+        if(zulls.Count > 0)
+        {
+            zulls[Random.Range(0, zulls.Count)].ClearZull();
+        }
+    }
+
     private void OnDrawGizmosSelected()
     {
         Vector2 line = new Vector2(_xdistance*2, _ydistance*2);
