@@ -9,6 +9,7 @@ public class ThrowDeck : MonoBehaviour, ICanClick
     [SerializeField] List<CardData> _throwCards;
     [SerializeField] SpriteRenderer _renderer;
     [SerializeField] ThrowCardView _cardView;
+    [SerializeField] Card _cardPrefab;
     bool _haveCard;
     public bool Clickable { get; set; } = false;
 
@@ -35,6 +36,16 @@ public class ThrowDeck : MonoBehaviour, ICanClick
         cards.AddRange(_throwCards);
         _throwCards.Clear();
         return cards;
+    }
+
+    public Card ReturnLastCard()
+    {
+        CardData data = _throwCards[_throwCards.Count - 1];
+        Card card =Instantiate(_cardPrefab, transform.position, transform.rotation);
+        card.Setup(data);
+        card.CardChanged();
+        _throwCards.Remove(data);
+        return card;
     }
     void SetRender()
     {

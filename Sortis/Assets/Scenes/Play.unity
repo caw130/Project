@@ -9147,6 +9147,7 @@ MonoBehaviour:
   _throwCards: []
   _renderer: {fileID: 1287091401}
   _cardView: {fileID: 1788562098}
+  _cardPrefab: {fileID: 0}
 --- !u!4 &1287091399
 Transform:
   m_ObjectHideFlags: 0
@@ -15444,6 +15445,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a8b6381e1bbfa1c4b907d1a624ef4b0c, type: 2}
   - {fileID: 11400000, guid: 10907692f2f13b948986a18b0cffb5bb, type: 2}
   - {fileID: 11400000, guid: 1c591c486ae6a89418ca657b6b4bc20f, type: 2}
+  - {fileID: 11400000, guid: c6d83afa8f1391943a3cae7ad93aa841, type: 2}
+  - {fileID: 11400000, guid: f21d01a100e37a64c8f5314749cf749d, type: 2}
 --- !u!114 &2118281329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15462,6 +15465,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b3caa2cfab2214d4aa8ef075086d8ad3, type: 2}
   - {fileID: 11400000, guid: 010000840b9da1f4885284d569d5658f, type: 2}
   - {fileID: 11400000, guid: 56574a6fce0205b4ab1c7204ec3daa2d, type: 2}
+  - {fileID: 11400000, guid: fecc9d61775ac284f914ae1b4d9a7026, type: 2}
+  - {fileID: 11400000, guid: 47228b833f15ba9499f7e2b7f87ff653, type: 2}
+  - {fileID: 11400000, guid: 336886195c5755d4e82e4195ba06d1c9, type: 2}
+  - {fileID: 11400000, guid: 52672fd933bfd044e99a3d55bdf772c5, type: 2}
   _availableItems: []
 --- !u!4 &2118281330
 Transform:

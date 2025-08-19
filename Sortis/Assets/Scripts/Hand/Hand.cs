@@ -49,7 +49,7 @@ public class Hand : MonoBehaviour, ICardStacker
     {
         AddCard(new List<Card> { card });
     }
-
+    
     public void RemoveCard(Card card)
     {
         if (_drawCard.Remove(card))
@@ -58,8 +58,18 @@ public class Hand : MonoBehaviour, ICardStacker
         }
     }
 
-    
+    public void RemoveCard(GameEventType type, object a)
+    {
+        if (type != GameEventType.RemoveCard) return;
+        if (a is not Card card) return;
+        Debug.Log("접근");
 
+        if (_drawCard.Remove(card))
+        {
+            ReArrangeHand();
+            Debug.Log("제거 성공");
+        }
+    }
     public List<Card> SplitStackFrom(Card startCard)
     {
         _drawCard.Remove(startCard);
@@ -97,6 +107,12 @@ public class Hand : MonoBehaviour, ICardStacker
             Destroy(card.gameObject);
         }
         _drawCard.Clear();
+    }
+
+    public void GetThroCard()
+    {
+        Card card = _throwDeck.ReturnLastCard();
+        AddCard(card);
     }
 
     /// <summary>

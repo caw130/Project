@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -98,6 +97,14 @@ public class Shop : MonoBehaviour
             GameManager.Instance.SoundManager.PlayClip(SoundType.BuyItem);
         }
         
+    }
+
+    public void GetRandomCheat(GameEventType type)
+    {
+        if(type != GameEventType.GetRandomItem) return;
+        if (!_inventory.CanGetCheat) return;
+        CheatData cheat = _cheatPool.GiveCheat();
+        _inventory.GetCheat(cheat);
     }
 
     public void SellHack(HackData data)

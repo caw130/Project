@@ -29,8 +29,10 @@ public class DrawManager : MonoBehaviour, ICanClick
         _card.SetState(true);
         _card.Setup(data);
         _card.SetSorting(1);
-        GameEvent.Raise(GameEventType.Draw, _card);
         _hands.AddCard(_card);
+        GameEvent.Raise(GameEventType.Draw, _card);
+        
+        Debug.Log("GetCard");
         _card = null;
         SetCard();
         GameManager.Instance.SoundManager.PlayClip(SoundType.Draw);

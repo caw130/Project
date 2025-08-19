@@ -25,7 +25,11 @@ public class Goldmanager : MonoBehaviour
         _gold -= gold;
         return true;
     }
-
+    
+    public void MultipGold()
+    {
+        _gold *= 2;
+    }
     public void ResetGold()
     {
         _gold = 0;

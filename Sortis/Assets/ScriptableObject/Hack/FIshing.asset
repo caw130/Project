@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbda4fdba91267c4d86ab01335eacb3e, type: 3}
+  m_Name: FIshing
+  m_EditorClassIdentifier: 
+  _name: "\uC4F0\uB808\uAE30 \uB09A\uC2EF\uB300"
+  _description: "\uB77C\uC6B4\uB4DC\uAC00 \uC2DC\uC791\uD560 \uB54C, \uBE48 \uC790\uB9AC\uAC00
+    \uC788\uB2E4\uBA74 \uBB34\uC791\uC704 \uCE58\uD2B8\uB97C \uC0DD\uC131\uD569\uB2C8\uB2E4."
+  _icon: {fileID: -160476747, guid: 2bc0823cc3473bc488fab3e0c7d97f42, type: 3}
+  _price: 10
+  _itemNum: 0
+  _rarity: 1
+  _type: 0
+  _trigger: 06000000
+  _hackPrefab: {fileID: 6719921612887485051, guid: 2b2322bdbb2b58d4b831a8387df8b8c3, type: 3}
+  _imageSize: {x: 0, y: 0, z: 0}

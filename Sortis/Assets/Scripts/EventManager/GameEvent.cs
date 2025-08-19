@@ -34,6 +34,9 @@ public enum GameEventType
     HackRemove,
     HandReturn,
     ThrowCradShuffle,
+    GetRandomItem,
+    RemoveCard,
+    GetThrowCard,
 }
 
 public struct GameActionInfo

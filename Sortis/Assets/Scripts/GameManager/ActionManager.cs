@@ -109,8 +109,16 @@ public class ActionManager : MonoBehaviour
                 _throwDeck.RemoveData(_throwDeck.ThrowCard-1);
                 break;
 
+            case GameEventType.RemoveCard:
+                _hand.RemoveCard(type, a);
+                break;
+
             case GameEventType.Draw:
                 break;
+            case GameEventType.GetThrowCard:
+                _hand.GetThroCard();
+                break;
+
             case GameEventType.ZullComplete:
                 _zullCompleteManager.HandleZullCompletion(type, a);
                 break;
@@ -159,9 +167,15 @@ public class ActionManager : MonoBehaviour
             case GameEventType.BuyItem:
                 _uiManager.SetText();
                 break;
+
             case GameEventType.ShopRerool:
                 _uiManager.SetText();
                 break;
+
+            case GameEventType.GetRandomItem:
+                _shop.GetRandomCheat(type);
+                break;
+
             case GameEventType.UseItem:
                 break;
 
