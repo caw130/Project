@@ -22,3 +22,4 @@ MonoBehaviour:
   _type: 0
   _trigger: 0300000004000000
   _hackPrefab: {fileID: 3214073030400252567, guid: 3abda7665405ef94cb6f8ac39fd625e3, type: 3}
+  _imageSize: {x: 1, y: 1, z: 1}

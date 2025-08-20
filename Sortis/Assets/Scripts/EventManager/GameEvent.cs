@@ -19,6 +19,7 @@ public enum GameEventType
     OpenStore,
     SellItem,
     HackInfo,
+    HackInfoHide,
     CheatInfo,
     CheatInfoHide,
     CheatUseShow,
@@ -37,6 +38,8 @@ public enum GameEventType
     GetRandomItem,
     RemoveCard,
     GetThrowCard,
+    ShuffleHand,
+    ItemSell,
 }
 
 public struct GameActionInfo

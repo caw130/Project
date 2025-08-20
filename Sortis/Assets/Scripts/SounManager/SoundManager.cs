@@ -29,6 +29,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayClip(SoundType type)
     {
+        if (!_sounds.ContainsKey(type)) return;
         _effectSound.PlayOneShot(_sounds[type]);
     }
     public void StartBgm()

@@ -8,7 +8,7 @@ public class CardBug : HackEventType
     {
         if (_data.Trigger.Contains(type))
         {
-            int idx = Random.Range(0, 5);
+            int idx = Random.Range(0, 10);
             if( idx == 0)
             {
                 if (a is Card card)

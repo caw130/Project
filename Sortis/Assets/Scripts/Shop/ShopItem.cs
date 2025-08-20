@@ -44,7 +44,7 @@ public class ShopItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Vector2 pos = new Vector2(transform.position.x - 300, transform.position.y-20);
+        Vector2 pos = new Vector2(transform.position.x - 120, transform.position.y);
         _shop.ShowItemInfo(_data, pos);
     }
 

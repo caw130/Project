@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbda4fdba91267c4d86ab01335eacb3e, type: 3}
-  m_Name: Midas
+  m_Name: Amulet
   m_EditorClassIdentifier: 
-  _name: "\uB3C8\uC8FC\uBA38\uB2C8"
-  _description: "\uCE74\uB4DC\uB97C \uB0BC \uB54C 2 \uACE8\uB4DC\uB97C \uB354 \uC90D\uB2C8\uB2E4."
-  _icon: {fileID: -16108646, guid: 2bc0823cc3473bc488fab3e0c7d97f42, type: 3}
-  _price: 1
+  _name: "\uC548\uC804\uBD80\uC801"
+  _description: "\uC904\uC744 \uC644\uC131 \uD560 \uB54C, \uBE48 \uC790\uB9AC\uAC00
+    \uC788\uB2E4\uBA74 \uBB34\uC791\uC704 \uCE58\uD2B8\uB97C \uC0DD\uC131\uD569\uB2C8\uB2E4."
+  _icon: {fileID: 1000304241, guid: 2bc0823cc3473bc488fab3e0c7d97f42, type: 3}
+  _price: 15
   _itemNum: 0
   _rarity: 1
   _type: 0
-  _trigger: 03000000
-  _hackPrefab: {fileID: 962393668187499237, guid: 2d31f8d595d365b438ecc5c94c9e125c, type: 3}
+  _trigger: 00000000
+  _hackPrefab: {fileID: 5835474582235222850, guid: b327efc1e5952e746877d95432b4a0d9, type: 3}
   _imageSize: {x: 3.5, y: 3.5, z: 3.5}

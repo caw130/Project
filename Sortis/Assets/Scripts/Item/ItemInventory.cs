@@ -65,12 +65,14 @@ public class ItemInventory : MonoBehaviour
         _shop.SellHack(effectBase.Data);
         _hacks.Remove(effectBase);
         Destroy(effectBase.gameObject);
+        GameEvent.Raise(GameEventType.ItemSell);
     }
 
     public void SellCheat(CheatEffectBase cheatBase)
     {
         _shop.SellCheat(cheatBase.Data);
         RemoveCheat(cheatBase);
+        GameEvent.Raise(GameEventType.ItemSell);
     }
     public void RemoveCheat(CheatEffectBase cheatBase)
     {

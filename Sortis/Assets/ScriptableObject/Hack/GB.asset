@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbda4fdba91267c4d86ab01335eacb3e, type: 3}
-  m_Name: Midas
+  m_Name: GB
   m_EditorClassIdentifier: 
-  _name: "\uB3C8\uC8FC\uBA38\uB2C8"
-  _description: "\uCE74\uB4DC\uB97C \uB0BC \uB54C 2 \uACE8\uB4DC\uB97C \uB354 \uC90D\uB2C8\uB2E4."
-  _icon: {fileID: -16108646, guid: 2bc0823cc3473bc488fab3e0c7d97f42, type: 3}
-  _price: 1
+  _name: "\uC6A9\uB7C9\uC99D\uAC00"
+  _description: "\uBC84\uB9B4 \uC218 \uC788\uB294 \uCE74\uB4DC\uC758 \uC218\uAC00
+    5 \uC99D\uAC00\uD569\uB2C8\uB2E4."
+  _icon: {fileID: -1324387231, guid: 2bc0823cc3473bc488fab3e0c7d97f42, type: 3}
+  _price: 5
   _itemNum: 0
-  _rarity: 1
-  _type: 0
-  _trigger: 03000000
-  _hackPrefab: {fileID: 962393668187499237, guid: 2d31f8d595d365b438ecc5c94c9e125c, type: 3}
+  _rarity: 0
+  _type: 1
+  _trigger: 
+  _hackPrefab: {fileID: 1483900350339151066, guid: 8a9b13b4705d94746a8ece0113e9715f, type: 3}
   _imageSize: {x: 3.5, y: 3.5, z: 3.5}

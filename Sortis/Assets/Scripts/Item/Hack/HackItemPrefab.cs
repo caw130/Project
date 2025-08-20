@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HackItemPrefab : MonoBehaviour, ICanClick
+public class HackItemPrefab : MonoBehaviour, ICanClick, ICanHover
 {
     [SerializeField] SpriteRenderer _renderer;
     HackInventoryUi _inventory;
@@ -22,10 +22,13 @@ public class HackItemPrefab : MonoBehaviour, ICanClick
     public bool Clickable { get; set; } = true;
     public HackEffectBase Hack => _hack;
 
+    public bool Hoverable { get; set; } = true;
+
     public void SpawnHack(HackEffectBase hack, HackInventoryUi inventory)
     {
         _hack = hack;
         _renderer.sprite = hack.Data.Icon;
+        _renderer.transform.localScale = hack.Data.ImageSize;
         _inventory = inventory;
         hack.OnUsed += UseEffect;
     }
@@ -39,7 +42,7 @@ public class HackItemPrefab : MonoBehaviour, ICanClick
 
     public void OnClicked()
     {
-        GameEvent.Raise(GameEventType.HackInfo, this);
+        
     }
 
     void UseEffect()
@@ -47,5 +50,15 @@ public class HackItemPrefab : MonoBehaviour, ICanClick
         transform.DOKill();
         transform.DORotate(_rotate, _time/2).SetEase(_rotstartease).OnComplete(() => transform.DORotate(Vector3.zero, _time/2)).SetEase(_rotendease);
         transform.DOScale(_scale, _time/2).SetEase(_scalestartEase).OnComplete(()=>transform.DOScale(Vector3.one,_time/2).SetEase(_scaleendEase));
+    }
+
+    public void HoverIn()
+    {
+        GameEvent.Raise(GameEventType.HackInfo, this);
+    }
+
+    public void HoverOut()
+    {
+        GameEvent.Raise(GameEventType.HackInfoHide);
     }
 }

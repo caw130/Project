@@ -32,7 +32,6 @@ public class DrawManager : MonoBehaviour, ICanClick
         _hands.AddCard(_card);
         GameEvent.Raise(GameEventType.Draw, _card);
         
-        Debug.Log("GetCard");
         _card = null;
         SetCard();
         GameManager.Instance.SoundManager.PlayClip(SoundType.Draw);

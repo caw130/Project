@@ -10,6 +10,7 @@ public class ShuffleManager : MonoBehaviour
     public void MakeAndShuffleDeck()
     {
         List<CardData> newCard;
+        int deck = -_deck.Card;
         newCard = _throwDeck.ReturnCard();
         int count = newCard.Count;
         _deck.MakeDeck();
@@ -17,7 +18,8 @@ public class ShuffleManager : MonoBehaviour
         
         _deck.Shuffle();
         _animator.AnimateShuffle(count);
-        _animator.AnimamteDeckShuffle(_deck.Card);
+        deck += _deck.Card;
+        _animator.AnimamteDeckShuffle(deck);
     }
 
     public void ShuffleDeck()

@@ -98,9 +98,6 @@ public class ActionManager : MonoBehaviour
                 _cardManager.GetAction(type, a, b);
                 break;
 
-            case GameEventType.FirstTypeCardDrop:
-                break;
-
             case GameEventType.OnCardDiscard:
                 _discardManager.CardDiscard(type, a, b);
                 break;
@@ -113,8 +110,6 @@ public class ActionManager : MonoBehaviour
                 _hand.RemoveCard(type, a);
                 break;
 
-            case GameEventType.Draw:
-                break;
             case GameEventType.GetThrowCard:
                 _hand.GetThroCard();
                 break;
@@ -130,10 +125,16 @@ public class ActionManager : MonoBehaviour
             case GameEventType.RoundStarted:
                 break;
 
+            case GameEventType.ShuffleHand:
+                _hand.ShuffleHand(type);
+                break;
+
             case GameEventType.HackInfo:
                 _uiManager.ShowHackInfo(type,a);
                 break;
-
+            case GameEventType.HackInfoHide:
+                _uiManager.HideHackInfo(type);
+                break;
             case GameEventType.CheatInfo:
                 _uiManager.ShowCheatInfo(type, a);
                 break;  
@@ -279,6 +280,7 @@ public class ActionManager : MonoBehaviour
         _zullManager.ResetZulls();
         _throwDeck.Clear();
         _uiManager.ResetUi();
+        _shop.ShopClose();
         _hackPool.InitializePool();
         _itemInventory.ClearInventory();
         ChangeGameState(GameState.GamePlay);

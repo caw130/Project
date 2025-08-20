@@ -1,7 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 public class Hand : MonoBehaviour, ICardStacker
@@ -28,7 +25,7 @@ public class Hand : MonoBehaviour, ICardStacker
             Card currentCard = _drawCard[i];
 
 
-            float yPos = topy - (spacing * (i+1));
+            float yPos = topy - (spacing * (i + 1));
             float zPos = i * _cardDepth;
 
             currentCard.transform.localPosition = new Vector3(0, yPos, zPos);
@@ -49,7 +46,7 @@ public class Hand : MonoBehaviour, ICardStacker
     {
         AddCard(new List<Card> { card });
     }
-    
+
     public void RemoveCard(Card card)
     {
         if (_drawCard.Remove(card))
@@ -62,12 +59,10 @@ public class Hand : MonoBehaviour, ICardStacker
     {
         if (type != GameEventType.RemoveCard) return;
         if (a is not Card card) return;
-        Debug.Log("접근");
 
         if (_drawCard.Remove(card))
         {
             ReArrangeHand();
-            Debug.Log("제거 성공");
         }
     }
     public List<Card> SplitStackFrom(Card startCard)
@@ -79,12 +74,12 @@ public class Hand : MonoBehaviour, ICardStacker
 
     public void AddCard(List<Card> cards)
     {
-        foreach(var card in cards)
+        foreach (var card in cards)
         {
             card.CardParent(this);
             _drawCard.Add(card);
         }
-        while(UserStat.Instance.HandSize < _drawCard.Count)
+        while (UserStat.Instance.HandSize < _drawCard.Count)
         {
             DiscardCard();
         }
@@ -102,7 +97,7 @@ public class Hand : MonoBehaviour, ICardStacker
 
     public void DestroyHand()
     {
-        foreach(var card in _drawCard)
+        foreach (var card in _drawCard)
         {
             Destroy(card.gameObject);
         }
@@ -111,8 +106,23 @@ public class Hand : MonoBehaviour, ICardStacker
 
     public void GetThroCard()
     {
+        if (_throwDeck.ThrowCard <= 0) return;
+        if (UserStat.Instance.HandSize <= _drawCard.Count) return;
         Card card = _throwDeck.ReturnLastCard();
         AddCard(card);
+    }
+
+    public void ShuffleHand(GameEventType type)
+    {
+        if (type != GameEventType.ShuffleHand) return;
+        if (_drawCard.Count < 1) return;
+        for (int i = 0; i < _drawCard.Count-1; i++)
+        {
+            int j = Random.Range(i+1,_drawCard.Count - 1);
+
+            (_drawCard[i], _drawCard[j]) = (_drawCard[j], _drawCard[i]);
+        }
+        ReArrangeHand();
     }
 
     /// <summary>

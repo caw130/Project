@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class UserStat : MonoBehaviour
 {
-    /*
-    최대 줄 수
-    줄 제거 조건
-    손 크기
-    치트 크기
-    최대 버릴 카드
-     */
     public static UserStat Instance { get; set; }
     int _totalGold;
     int _totalUsedCard;
