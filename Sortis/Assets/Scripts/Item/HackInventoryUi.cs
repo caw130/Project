@@ -21,11 +21,25 @@ public class HackInventoryUi : MonoBehaviour
     
     void Rerange()
     {
-        float posY = _ySize / (_hacks.Count + 1);
+        int line = _hacks.Count / 2 +_hacks.Count %2;
+        float posY = _ySize / (line + 1);
         float startPos = -_ySize;
+        float posX = _xSize / 4;
         for(int i = 0; i < _hacks.Count; i++)
         {
-            _hacks[i].transform.localPosition = new Vector2(0, - _ySize/2 +(posY * (i+1)));
+            if ((i + 1) % 2 == 0)
+            {
+                _hacks[i].transform.localPosition = new Vector2(-posX, -_ySize / 2 + (posY * (i/2 + 1)));
+            }
+            else if((i+1 == _hacks.Count))
+            {
+                _hacks[i].transform.localPosition = new Vector2(0, -_ySize / 2 + (posY * (i / 2 + 1)));
+            }
+            else
+            {
+                _hacks[i].transform.localPosition = new Vector2(posX, -_ySize / 2 + (posY * (i / 2 + 1)));
+            }
+            
         }
     }
 

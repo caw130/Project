@@ -28,12 +28,13 @@ public class HackItemPrefab : MonoBehaviour, ICanClick, ICanHover
     {
         _hack = hack;
         _renderer.sprite = hack.Data.Icon;
-        _renderer.transform.localScale = hack.Data.ImageSize;
+        _renderer.transform.localScale = hack.Data.Size;
         _inventory = inventory;
         hack.OnUsed += UseEffect;
     }
     public void SellItem()
     {
+        GameEvent.Raise(GameEventType.HackUseHide);
         Hack.OnUsed -= UseEffect;
         _inventory.SellHack(this);
         transform.DOKill();
@@ -42,7 +43,7 @@ public class HackItemPrefab : MonoBehaviour, ICanClick, ICanHover
 
     public void OnClicked()
     {
-        
+        GameEvent.Raise(GameEventType.HackUseShow,this);
     }
 
     void UseEffect()

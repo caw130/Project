@@ -17,6 +17,8 @@ public class DiscardManager : MonoBehaviour
         cardToDiscard.transform.position = _throwDeck.transform.position;
         originalStacker.RemoveCard(cardToDiscard);
 
+        Vector3 discardPos = transform.position;
+        discardPos.z = 0.05f;
         cardToDiscard.transform.position = transform.position;
         cardToDiscard.DestroyCardWithAnimation();
         GameManager.Instance.SoundManager.PlayClip(SoundType.CardDisCard);

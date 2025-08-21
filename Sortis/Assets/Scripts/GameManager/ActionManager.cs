@@ -135,6 +135,15 @@ public class ActionManager : MonoBehaviour
             case GameEventType.HackInfoHide:
                 _uiManager.HideHackInfo(type);
                 break;
+
+            case GameEventType.HackUseShow:
+                _uiManager.ShowHackUse(type, a);
+                break;
+
+            case GameEventType.HackUseHide:
+                _uiManager.HideHackUse(type);
+                break;
+
             case GameEventType.CheatInfo:
                 _uiManager.ShowCheatInfo(type, a);
                 break;  

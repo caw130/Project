@@ -10,4 +10,5 @@ public class CheatData : ItemData
 
     public int Charges => _charges;
     public CheatEffectBase CheatPrefab => _cheatPrefab;
+
 }

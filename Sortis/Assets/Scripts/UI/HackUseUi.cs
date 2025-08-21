@@ -6,7 +6,7 @@ public class HackUseUi : MonoBehaviour
 {
     [SerializeField] HackItemPrefab _hack;
 
-    public void SellCheat()
+    public void SellHack()
     {
         _hack.SellItem();
     }

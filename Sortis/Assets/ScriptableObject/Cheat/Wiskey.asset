@@ -16,5 +16,6 @@ MonoBehaviour:
   _description: "\uBC84\uB9B0 \uCE74\uB4DC\uB97C \uB371\uC5D0 \uC11E\uC2B5\uB2C8\uB2E4."
   _icon: {fileID: 21300000, guid: 36c5c2d32d6e5834ebf3d84ae5c8b01e, type: 3}
   _price: 7
+  _size: {x: 1, y: 1, z: 1}
   _charges: 1
   _cheatPrefab: {fileID: 2424546075978647119, guid: 8bf049d62a3d80a4bbdfa4229b6129ca, type: 3}

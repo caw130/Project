@@ -16,6 +16,7 @@ public class CheatItemPrefab : MonoBehaviour, ICanClick, ICanHover
     public void SpawnCheat(CheatEffectBase cheat, CheatInventoryUi inventory)
     {
         _cheat = cheat;
+        _renderer.gameObject.transform.localScale = _cheat.Data.Size;
         _renderer.sprite = cheat.Data.Icon;
         _inventory = inventory;
     }

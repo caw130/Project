@@ -17,5 +17,6 @@ MonoBehaviour:
     \uAC00\uC838\uC635\uB2C8\uB2E4.\n(\uCD5C\uB300 5\uBC88)"
   _icon: {fileID: 21300000, guid: 31ce55c2474361d4fab07984f18f9145, type: 3}
   _price: 5
+  _size: {x: 1, y: 1, z: 1}
   _charges: 5
   _cheatPrefab: {fileID: 442282285843525504, guid: 04bcd9d93edb22d4f98e56f88fd84fae, type: 3}

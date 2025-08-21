@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// 게임 내부에 있는 드래그, 클릭, 호버 등을 관리하는 스크립트.
@@ -35,6 +36,10 @@ public class DragManager : MonoBehaviour
     }
     private void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject() && !_isDragging)
+        {
+            return;
+        }
         _worldPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
         _hit = Physics2D.Raycast(_worldPosition, Vector2.zero, Mathf.Infinity, _interactableLayers);
 

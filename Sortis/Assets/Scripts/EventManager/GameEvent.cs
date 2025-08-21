@@ -24,6 +24,8 @@ public enum GameEventType
     CheatInfoHide,
     CheatUseShow,
     CheatUseHide,
+    HackUseShow,
+    HackUseHide,
     Draw,
     Throw,
     RemoveHand,

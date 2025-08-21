@@ -17,9 +17,9 @@ MonoBehaviour:
     \uD558\uB098 \uC904\uC5EC\uC90D\uB2C8\uB2E4."
   _icon: {fileID: 21300000, guid: d4c1dfa4f1010c345864aa2f017e3eb4, type: 3}
   _price: 10
+  _size: {x: 1.5, y: 1.5, z: 1.5}
   _itemNum: 0
   _rarity: 2
   _type: 1
   _trigger: 
   _hackPrefab: {fileID: 2325850768865687932, guid: 06281637ca7d3dc48a8e0b2518f1e30b, type: 3}
-  _imageSize: {x: 1.5, y: 1.5, z: 1.5}

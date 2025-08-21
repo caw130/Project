@@ -23,6 +23,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] CheatItemInfo _cheatInfo;
     [SerializeField] CheatUseUi _cheatUseUi;
     [SerializeField] HackUseUi _hackUseUi;
+    
 
     public void Initialize()
     {
@@ -88,11 +89,13 @@ public class UiManager : MonoBehaviour
 
     public void ShowHackUse(GameEventType type, object a)
     {
+        if(type != GameEventType.HackUseShow) return;
         if(a is not HackItemPrefab hack) return;
         _hackUseUi.Show(hack, hack.transform.position);
     }
     public void HideHackUse(GameEventType type)
     {
+        if(type != GameEventType.HackUseHide) return;
         _hackUseUi.Hide();
     }
 
@@ -115,6 +118,7 @@ public class UiManager : MonoBehaviour
         _cheatInfo.Hide();
         _cheatUseUi.Hide();
         _hackInfo.Hide();
+        _hackUseUi.Hide();
         _resultPanel.Hide();
     }
 
