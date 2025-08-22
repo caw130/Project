@@ -31,19 +31,26 @@ public class HackItemPrefab : MonoBehaviour, ICanClick, ICanHover
         _renderer.transform.localScale = hack.Data.Size;
         _inventory = inventory;
         hack.OnUsed += UseEffect;
+        transform.DOKill();
+        transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.1f).OnComplete(() => transform.DOScale(Vector3.one, 0.1f));
     }
     public void SellItem()
     {
         GameEvent.Raise(GameEventType.HackUseHide);
         Hack.OnUsed -= UseEffect;
         _inventory.SellHack(this);
-        transform.DOKill();
-        transform.transform.DOScale(new Vector3(2, 2, 2), 0.1f).OnComplete(() => transform.DOScale(Vector3.zero, 0.2f).OnComplete(() => Destroy(this.gameObject)));
+        RemoveThisObject();
     }
 
     public void OnClicked()
     {
         GameEvent.Raise(GameEventType.HackUseShow,this);
+    }
+
+    public void RemoveThisObject()
+    {
+        transform.DOKill();
+        transform.DOScale(new Vector3(2, 2, 2), 0.1f).OnComplete(() => transform.DOScale(Vector3.zero, 0.2f).OnComplete(() => Destroy(this.gameObject)));
     }
 
     void UseEffect()

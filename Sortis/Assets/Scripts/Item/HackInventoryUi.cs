@@ -19,7 +19,7 @@ public class HackInventoryUi : MonoBehaviour
         Rerange();
     }
     
-    void Rerange()
+    public void Rerange()
     {
         int line = _hacks.Count / 2 +_hacks.Count %2;
         float posY = _ySize / (line + 1);
@@ -42,7 +42,18 @@ public class HackInventoryUi : MonoBehaviour
             
         }
     }
-
+    public void RemoveHack(HackEffectBase effect)
+    {
+        foreach(var hack in _hacks)
+        {
+            if (hack.Hack == effect)
+            {
+                _hacks.Remove(hack);
+                hack.RemoveThisObject();
+                break;
+            }
+        }
+    }
     public void SellHack(HackItemPrefab hack)
     {
         HackEffectBase item = hack.Hack;

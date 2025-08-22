@@ -10,7 +10,6 @@ public class WormApple : HackEventType
         {
             GameEvent.Raise(GameEventType.ClearThrowDeck);
             GameEvent.Raise(GameEventType.HackRemove,this);
-            Destroy(this);
         }
     }
 

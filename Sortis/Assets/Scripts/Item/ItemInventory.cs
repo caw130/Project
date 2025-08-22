@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ItemInventory : MonoBehaviour
@@ -11,8 +12,16 @@ public class ItemInventory : MonoBehaviour
     [SerializeField] HackInventoryUi _hackInvnetory;
     [SerializeField] CheatInventoryUi _cheatInventory;
     [SerializeField] Shop _shop;
+    [SerializeField] TextMeshPro _hackText;
+    [SerializeField] TextMeshPro _cheatText;
     public bool CanGetHack => _hacks.Count < _maxHack;
     public bool CanGetCheat => _cheats.Count < UserStat.Instance.MaxCheatSize;
+
+    private void Update()
+    {
+        _hackText.text = $"{_hacks.Count}/{_maxHack}";
+        _cheatText.text = $"{_cheats.Count}/{UserStat.Instance.MaxCheatSize}";
+    }
     public void GetHack(HackData data)
     {
         HackEffectBase hack = Instantiate(data.HackPrefab);
@@ -90,7 +99,9 @@ public class ItemInventory : MonoBehaviour
     {
         if (type != GameEventType.HackRemove) return;
         if (!(a is HackEffectBase hack)) return;
+        _hackInvnetory.RemoveHack(hack);
         _shop.RemoveHack(hack.Data);
         _hacks.Remove(hack);
+        _hackInvnetory.Rerange();
     }
 }
