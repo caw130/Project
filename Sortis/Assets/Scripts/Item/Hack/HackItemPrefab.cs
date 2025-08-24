@@ -37,6 +37,7 @@ public class HackItemPrefab : MonoBehaviour, ICanClick, ICanHover
     public void SellItem()
     {
         GameEvent.Raise(GameEventType.HackUseHide);
+        
         Hack.OnUsed -= UseEffect;
         _inventory.SellHack(this);
         RemoveThisObject();
@@ -58,6 +59,7 @@ public class HackItemPrefab : MonoBehaviour, ICanClick, ICanHover
         transform.DOKill();
         transform.DORotate(_rotate, _time/2).SetEase(_rotstartease).OnComplete(() => transform.DORotate(Vector3.zero, _time/2)).SetEase(_rotendease);
         transform.DOScale(_scale, _time/2).SetEase(_scalestartEase).OnComplete(()=>transform.DOScale(Vector3.one,_time/2).SetEase(_scaleendEase));
+        GameManager.Instance.SoundManager.PlayClip(SoundType.ItemUse);
     }
 
     public void HoverIn()

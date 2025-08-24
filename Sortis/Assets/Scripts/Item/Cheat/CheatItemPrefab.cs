@@ -38,6 +38,7 @@ public class CheatItemPrefab : MonoBehaviour, ICanClick, ICanHover
     public void UseCheat()
     {
         _cheat.Use();
+        GameManager.Instance.SoundManager.PlayClip(SoundType.ItemUse); 
         transform.localScale = new Vector3(2,2,2);
         transform.DOKill();
         transform.DOShakeScale(1, new Vector3(1,1,1), 10);
