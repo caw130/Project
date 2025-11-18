@@ -1,0 +1,656 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Background" Collapsed="true">
+    <Position X="19.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAEAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Background\Background.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Card" Collapsed="true">
+    <Position X="52.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABhASIHEAAAAgAAABAAIEAFQCAAjAIAACQAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Card\Card.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CardAnim" Collapsed="true">
+    <Position X="39.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABABkAAgCAAAAAAAAAQACQAQAAAQAAAAAAAAAAAEI=</HashCode>
+      <FileName>Assets\Scripts\Card\CardAnim.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CardAttribute" Collapsed="true">
+    <Position X="52.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAABAIAAIAgQAAAAAAAgAAAEAAAAAAQAAhAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Card\CardAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CardShuffleAnimator" Collapsed="true">
+    <Position X="39.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FAYAAAAAAIAAAAAABAAAAABAAAAAAAIAAAAAQIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Deck\CardShuffleAnimator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Deck" Collapsed="true">
+    <Position X="43.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAABABAAgAAAAAICAAAEAABAAAAAIgAAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Deck\Deck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DrawManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="43.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAABEAQAQEAAAAAgAAAIAAEA=</HashCode>
+      <FileName>Assets\Scripts\Deck\DrawManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ShuffleManager" Collapsed="true">
+    <Position X="50.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAABAAAIAgAAAgAAAA=</HashCode>
+      <FileName>Assets\Scripts\Deck\ShuffleManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameEvent" Collapsed="true">
+    <Position X="11.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAQAAAAAIAAAgAAAAAAAAAAQAAAAAAAAAAAACA=</HashCode>
+      <FileName>Assets\Scripts\EventManager\GameEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActionManager" Collapsed="true">
+    <Position X="11.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oBAKAARAAHECAAAARAAgCAAIJAAgQAAAAIggSQIQgAA=</HashCode>
+      <FileName>Assets\Scripts\GameManager\ActionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CardDataManager" Collapsed="true">
+    <Position X="45" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameManager\CardDataManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CardMoveManager" Collapsed="true">
+    <Position X="13" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAAAAChBAAAAAAAAAACAAAAAAAAAAAAAAARABAJA=</HashCode>
+      <FileName>Assets\Scripts\GameManager\CardMoveManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DragManager" Collapsed="true">
+    <Position X="14.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABACAACAAAAwCAAAAAAJACAAAAAAAAwBABCAIAAo=</HashCode>
+      <FileName>Assets\Scripts\GameManager\DragManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameManager" Collapsed="true">
+    <Position X="11.25" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAACAAAIAAEAAAAAAAAAAECAQAQAAAAAAgAkA=</HashCode>
+      <FileName>Assets\Scripts\GameManager\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayManager" Collapsed="true">
+    <Position X="14.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAQEA=</HashCode>
+      <FileName>Assets\Scripts\GameManager\PlayManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoundManager" Collapsed="true">
+    <Position X="11.25" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAEAAAAAAAAAAAAAAAAABAAAIQAEg=</HashCode>
+      <FileName>Assets\Scripts\GameManager\RoundManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZullCompleteManager" Collapsed="true">
+    <Position X="45" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameManager\ZullCompleteManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="47.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAIABBAAIAAAREAAACBAAIYAABAAAAIAAAAAAAAIA=</HashCode>
+      <FileName>Assets\Scripts\Hand\Hand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CheatData" Collapsed="true">
+    <Position X="50" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACIAAAAAAAAIAAQAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Cheat\CheatData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CheatEffectBase" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAQgAAAAAAAAAAAAGABAAAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Cheat\CheatEffectBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CheatItemPrefab" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABQAAAAAEAgQAAAAQAAAFQCAAAiAAAIAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Cheat\CheatItemPrefab.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Capsule" Collapsed="true">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Cheat\CheatLogic\Capsule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CaptainQ" Collapsed="true">
+    <Position X="5.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Cheat\CheatLogic\CaptainQ.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cheese" Collapsed="true">
+    <Position X="7.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Cheat\CheatLogic\Cheese.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DONOTCLICK" Collapsed="true">
+    <Position X="10" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Cheat\CheatLogic\DONOTCLICK.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DoubleEgg" Collapsed="true">
+    <Position X="12.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Cheat\CheatLogic\DoubleEgg.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ereaser" Collapsed="true">
+    <Position X="14.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Cheat\CheatLogic\Ereaser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jam" Collapsed="true">
+    <Position X="16.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Cheat\CheatLogic\Jam.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Whiskey" Collapsed="true">
+    <Position X="19" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Cheat\CheatLogic\Whiskey.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CheatPool" Collapsed="true">
+    <Position X="26.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Cheat\CheatPool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CheatInventoryUi" Collapsed="true">
+    <Position X="18.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAKAEAIAAAIAAAAAIgAAIACAAAIAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\CheatInventoryUi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HackData" Collapsed="true">
+    <Position X="47.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABQGAAAAAAAAAAAAQAIIgQAAAAAAQAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Hack\HackData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HackEffectBase" Collapsed="true">
+    <Position X="14.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAABAAABQAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Hack\HackEffectBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HackEventType" Collapsed="true">
+    <Position X="18.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Hack\HackEventType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HackItemPrefab" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACQQgAAQgAAhAAAAAAAAAHQCAAICAgAACAgAAACE=</HashCode>
+      <FileName>Assets\Scripts\Item\Hack\HackItemPrefab.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Alpha" Collapsed="true">
+    <Position X="21.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Hack\HackLogic\Alpha.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Amulet" Collapsed="true">
+    <Position X="26" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Hack\HackLogic\Amulet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Beer" Collapsed="true">
+    <Position X="10.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Hack\HackLogic\Beer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CardBug" Collapsed="true">
+    <Position X="12.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Hack\HackLogic\CardBug.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DoubleWaffle" Collapsed="true">
+    <Position X="14.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Hack\HackLogic\DoubleWaffle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fishing" Collapsed="true">
+    <Position X="17" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Hack\HackLogic\Fishing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GB" Collapsed="true">
+    <Position X="3.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Hack\HackLogic\GB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jocker" Collapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Hack\HackLogic\Jocker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Midas" Collapsed="true">
+    <Position X="19.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Hack\HackLogic\Midas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pocket" Collapsed="true">
+    <Position X="8" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Hack\HackLogic\Pocket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WormApple" Collapsed="true">
+    <Position X="23.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Hack\HackLogic\WormApple.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HackPool" Collapsed="true">
+    <Position X="24.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAABAAgAAAAAAAAAACAAAAAACAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\Item\Hack\HackPool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HackStatType" Collapsed="true">
+    <Position X="5.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Hack\HackStatType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HackInventoryUi" Collapsed="true">
+    <Position X="18.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAFAAAAAAAKAAAIAAAAAAAAAIAAAQIKCAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\HackInventoryUi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemInventory" Collapsed="true">
+    <Position X="23.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUsAAAAAAAAEBAAAAAAACAAIgEEQoIEAAIAACAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Item\ItemInventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenuPanel" Collapsed="true">
+    <Position X="21.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAACAAAAAAAAAAAgEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MainMenu\MainMenuPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OptionMenu" Collapsed="true">
+    <Position X="23.25" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAEAIAAAAAAAAAAAEAABAAAAAAAAAAGAAAE=</HashCode>
+      <FileName>Assets\Scripts\MainMenu\OptionMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneChanger" Collapsed="true">
+    <Position X="19.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAABAAAAQEQAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Assets\Scripts\MainMenu\SceneChanger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CardData" Collapsed="true">
+    <Position X="39.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAABAAAAIAAAAAAAAAAgABAAAAAAQAAEAgAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObject\CardData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemData" Collapsed="true">
+    <Position X="49" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAIAAAAQAggAAEAAAAAAQAAAAAAACAAAAAAAMAAAA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObject\ItemData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SounData" Collapsed="true">
+    <Position X="32" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAgAAAAAAAAAAAAAAAQAAIAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObject\SounData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop" Collapsed="true">
+    <Position X="23" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEBAAAqEChAAQAAAhAAAAAAIAAAQADAAAIABAADAEA=</HashCode>
+      <FileName>Assets\Scripts\Shop\Shop.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShopInteractive" Collapsed="true">
+    <Position X="23" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAAAAEAAAAAAAAEAAAAABAEAAEAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Assets\Scripts\Shop\ShopInteractive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShopItem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIIAAAABgAABQABAACAAAAAAAAgAACAAAAAAQAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Shop\ShopItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SoundManager" Collapsed="true">
+    <Position X="30.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAgAAAIAAAAAAAAgBAABAEAAAI=</HashCode>
+      <FileName>Assets\Scripts\SounManager\SoundManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiscardManager" Collapsed="true">
+    <Position X="45" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Throw\DiscardManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ThrowCard" Collapsed="true">
+    <Position X="43.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\Throw\ThrowCard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ThrowCardView" Collapsed="true">
+    <Position X="45.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACgAEAAAAAAIAAAUAAAAAAAAwQAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Throw\ThrowCardView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ThrowDeck" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="45.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAQAEQSAACgAAAAAAAAQFQCREAAAAIAAEgBAAAA=</HashCode>
+      <FileName>Assets\Scripts\Throw\ThrowDeck.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CheatItemInfo" Collapsed="true">
+    <Position X="18.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAEEAAAQAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\CheatItemInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CheatUseUi" Collapsed="true">
+    <Position X="16.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAEAAAQAAAAAAEAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\CheatUseUi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HackInfo" Collapsed="true">
+    <Position X="16.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAEEAAAAAAAAAAEAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\HackInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HackUseUi" Collapsed="true">
+    <Position X="16.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAEAAAAAAAAAAEAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\HackUseUi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PalyOption" Collapsed="true">
+    <Position X="19.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAgEAAAAAAAAAAEAAACAAABAAgAAgA=</HashCode>
+      <FileName>Assets\Scripts\UI\PalyOption.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResolutionChanger" Collapsed="true">
+    <Position X="21.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAACAAAAAAAIAAIAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\ResolutionChanger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResultPanel" Collapsed="true">
+    <Position X="23.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAEAAAEAAAAAAEAADAAAAAgAAAgAA=</HashCode>
+      <FileName>Assets\Scripts\UI\ResultPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResultScreenUi" Collapsed="true">
+    <Position X="28.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQABAAAIgAAAIAAACACBAAAAAAAAAAAAAAEAAAQAA=</HashCode>
+      <FileName>Assets\Scripts\UI\ResultScreenUi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShopItemInfo" Collapsed="true">
+    <Position X="21.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAABAAAAAAEEAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\ShopItemInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UiManager" Collapsed="true">
+    <Position X="21.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAEAAABABAgAAUACAoCEAAACAAAICAEEAAqQCIIQQQU=</HashCode>
+      <FileName>Assets\Scripts\UI\UiManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goldmanager" Collapsed="true">
+    <Position X="13" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACgAABAAAAAAAAAAAAAAQAAAAAABAEE=</HashCode>
+      <FileName>Assets\Scripts\UserDatas\Goldmanager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserStat" Collapsed="true">
+    <Position X="43.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBAIAAAABAAAAAABCgAAABIAhAABoAKAQwAgIJAACEA=</HashCode>
+      <FileName>Assets\Scripts\UserDatas\UserStat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zull" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="43.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAIgAAQEIAABAAFAAAAAAIAEAIAIBAAgAIA=</HashCode>
+      <FileName>Assets\Scripts\Zull\Zull.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ZullManager" Collapsed="true">
+    <Position X="43.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAECIQAAQAAACAAAAAoEAAAIAAgIAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Zull\ZullManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="GameActionInfo" Collapsed="true">
+    <Position X="28.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAQAAAAAIAAAAAAAAAAAAQAAIAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\EventManager\GameEvent.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="ICanClick" Collapsed="true">
+    <Position X="28.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Interface\ICanClick.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ICanDrag" Collapsed="true">
+    <Position X="30.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAACAAAACQAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Interface\ICanDrag.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ICanHover" Collapsed="true">
+    <Position X="28.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAABACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Interface\ICanHover.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ICardStacker" Collapsed="true">
+    <Position X="30.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAQEAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Interface\ICardStacker.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="CardPosition" Collapsed="true">
+    <Position X="38" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Card\CardAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CardType" Collapsed="true">
+    <Position X="36.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAgAAAAAAAAAAAgAAAAAAAAAAAAAAAAAgABA=</HashCode>
+      <FileName>Assets\Scripts\Card\CardAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CardSuit" Collapsed="true">
+    <Position X="39.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAIQIAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Card\CardAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CardColor" Collapsed="true">
+    <Position X="36.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Assets\Scripts\Card\CardAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameEventType" Collapsed="true">
+    <Position X="38" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QEAAgiRiAAAgCyRACEgAAgAAAACAYEgQhQEgIABAAgI=</HashCode>
+      <FileName>Assets\Scripts\EventManager\GameEvent.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameState" Collapsed="true">
+    <Position X="39.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAIAAAAAAAAAAAAAAACAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameManager\ActionManager.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ItemRarity" Collapsed="true">
+    <Position X="38" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAQAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Hack\HackData.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="HackType" Collapsed="true">
+    <Position X="36.25" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item\Hack\HackData.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SoundType" Collapsed="true">
+    <Position X="39.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECgAAGAAAACwAAAgAAAAIAAAQAAAAAAAAABAFAEAA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObject\SounData.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>
