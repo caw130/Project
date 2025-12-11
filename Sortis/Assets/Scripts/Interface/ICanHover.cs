@@ -3,22 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// ���콺�� �ν��ϴ� �������̽�
+/// 호버가 가능한 오브젝트
 /// </summary>
 interface ICanHover 
 {
-    /// <summary>
-    /// ���콺�� �ν� �ϴ°�?
-    /// </summary>
+    // 해당 오브젝트가 호버가 가능한지 확인
     bool Hoverable { get; set; }
 
-    /// <summary>
-    /// ���콺�� ���� ���� ��
-    /// </summary>
+    // 마우스가 올라오면 실행
     void HoverIn();
 
-    /// <summary>
-    /// ���콺�� ��������
-    /// </summary>
+    // 마우스가 나가면 실행
     void HoverOut();
 }

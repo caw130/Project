@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Ŭ���� �����ϴ� �������̽�
+/// 클릭이 가능한 오브젝트
 /// </summary>
 interface ICanClick
 {
-    /// <summary>
-    /// Ŭ�� �����Ѱ�?
-    /// </summary>
+    // 해당 오브젝트가 클릭이 가능한지 아닌지 설정
     bool Clickable { get; set; }
 
-    /// <summary>
-    /// ������Ʈ�� Ŭ�� �Ǿ��� ��
-    /// </summary>
+    // 해당 오브젝트가 클릭이 된다면 실행
     void OnClicked();
 }

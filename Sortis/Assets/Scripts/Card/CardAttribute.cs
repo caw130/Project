@@ -31,7 +31,6 @@ public enum CardColor
     black
 }
 
-
 public class CardAttribute : MonoBehaviour
 {
     protected CardType _type;

@@ -3,28 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// µå·¡±×¸¦ °ü¸®ÇÏ´Â ÀÎÅÍÆäÀÌ½º
+/// ë“œë ˆê·¸ê°€ ê°€ëŠ¥í•œ ì˜¤ë¸Œì íŠ¸
 /// </summary>
 public interface ICanDrag
 {
-    /// <summary>
-    /// µå·¡±× °¡´ÉÇÑ°¡?
-    /// </summary>
+    // í•´ë‹¹ ì˜¤ë¸Œì íŠ¸ê°€ ë“œë˜ê·¸ê°€ ê°€ëŠ¥í•œì§€ ì•„ë‹Œì§€ ì„¤ì •
     bool Dragable { get; set; }
 
-    /// <summary>
-    /// µå·¡±× ½ÃÀÛ
-    /// </summary>
+    // í•´ë‹¹ ì˜¤ë¸Œì íŠ¸ê°€ ë“œë˜ê·¸ê°€ ì‹œì‘ë˜ë©´ ì‹¤í–‰
     void OnBeginDrag();
 
-    /// <summary>
-    /// µå·¡±× Áß
-    /// </summary>
-    /// <param name="pos">¸¶¿ì½ºÀÇ À§Ä¡</param>
+    // í•´ë‹¹ ì˜¤ë¸Œì íŠ¸ê°€ 
     void OnDrag(Vector2 pos);
 
-    /// <summary>
-    /// µå·¡±× ³¡
-    /// </summary>
     void OnDrop();
 }

@@ -63,8 +63,16 @@ public struct GameActionInfo
 }
 public static class GameEvent
 {
+    //게임 Action이 실행되는 부분
     public static event Action<GameActionInfo> OnGameAction;
-    public static void Raise(GameEventType type, object a = null, object b = null) => OnGameAction?.Invoke(new GameActionInfo(type, a, b));
+    /// <summary>
+    /// OnGameAction을 실행 시키는 함수
+    /// </summary>
+    /// <param name="type">이벤트 타입</param>
+    /// <param name="a">a 오브젝트</param>
+    /// <param name="b">b 오브젝트</param>
+    public static void Raise(GameEventType type, object a = null, object b = null) =>
+        OnGameAction?.Invoke(new GameActionInfo(type, a, b));
 
     public static event Action GameRestart;
     public static void InvokeGameRestart() => GameRestart?.Invoke();

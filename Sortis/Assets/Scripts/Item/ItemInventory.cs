@@ -41,16 +41,22 @@ public class ItemInventory : MonoBehaviour
         _cheats.Add(cheat);
         _cheatInventory.AddCheat(cheat);
     }
+
+    //가지고 있는 Hack들을 실행하는 스크립트
     public void InvokeHack(GameEventType type, object a = null, object b = null)
     {
+        // 내가 가지고 있는 Hack들을 순차적으로 가져옴
         foreach (var hack in _hacks)
         {
+            //만약 가져온 핵이 Event를 받아오는 형식이면
             if (hack is HackEventType eventhack)
             {
+                //가져온 이벤트 정보를 Hack에 보냄
                 eventhack.OnGameEvent(type,a,b);
             }
         }
     }
+
     public void ClearInventory()
     {
         foreach(var hack in _hacks)

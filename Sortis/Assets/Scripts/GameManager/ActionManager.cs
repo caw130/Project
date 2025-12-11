@@ -86,8 +86,10 @@ public class ActionManager : MonoBehaviour
 
     void OnAction(GameEventType type, object a, object b)
     {
+        //만약 게임 상태가 클리어 또는 오버 상태이면 실행 안함
         if (_gameState == GameState.GameClear || _gameState == GameState.GameOver) return;
 
+        //이벤트의 타입을 비교하는 부분
         switch (type)
         {
             case GameEventType.CardDrag:

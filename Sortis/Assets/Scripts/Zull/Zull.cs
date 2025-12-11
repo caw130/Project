@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Zull : MonoBehaviour, ICardStacker
 {
-    [Header("¼öÁ¤ °¡´ÉÇÑ °ª")]
+    [Header("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½")]
     [SerializeField] float _placeDistance;
     [SerializeField] float _cardDistance;
     [SerializeField] float _cardDepth;
@@ -25,27 +25,27 @@ public class Zull : MonoBehaviour, ICardStacker
     }
 
     /// <summary>
-    /// ÀÌ ÁÙ¿¡ Ä«µå¸¦ ³õÀ» ¼ö ÀÖ´Â°¡
+    /// ï¿½ï¿½ ï¿½Ù¿ï¿½ Ä«ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´Â°ï¿½
     /// </summary>
-    /// <param name="selectedCard">ÇÃ·¹ÀÌ¾î°¡ µé°í ÀÖ´Â Ä«µå</param>
+    /// <param name="selectedCard">ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ Ä«ï¿½ï¿½</param>
     /// <returns></returns>
     public bool CheckCanPlace(Card selectedCard)
     {
-        // ÀÌ ÁÙ¿¡ ³õÀº Ä«µå°¡ ¾øÀ¸¸é
+        // ï¿½ï¿½ ï¿½Ù¿ï¿½ ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½å°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (_cards.Count == 0)
         {
             return true;
         }
 
-        // ³»°¡ ¸¶Áö¸·À¸·Î ³õÀº Ä«µå °¡Á®¿À±â
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         Card lastCard = _cards[_cards.Count - 1];
-        // ¸¸¾à ³»°¡ ³õÀº Ä«µå°¡ µé°íÀÖ´Â Ä«µå¿Í »öÀÌ ´Ù¸£°í, ¼ö°¡ 1 Â÷ÀÌ°¡ ³¯ °æ¿ì
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½å°¡ ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ Ä«ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ 1 ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
         if (lastCard.Color != selectedCard.Color && (lastCard.Num - 1) == selectedCard.Num)
         {
             return true;
         }
 
-        // ¾Æ¹«°Íµµ ¾Æ´Ò¶§
+        // ï¿½Æ¹ï¿½ï¿½Íµï¿½ ï¿½Æ´Ò¶ï¿½
         return false;
     }
     public void AddCard(Card card)

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CardMoveManager : MonoBehaviour
 {
     [SerializeField] ZullManager _zullManager;

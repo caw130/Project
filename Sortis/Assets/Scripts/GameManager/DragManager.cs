@@ -36,10 +36,12 @@ public class DragManager : MonoBehaviour
     }
     private void Update()
     {
+        // 만약 인터패이스 위에 있다면 실행 취소
         if (EventSystem.current.IsPointerOverGameObject() && !_isDragging)
         {
             return;
         }
+
         _worldPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
         _hit = Physics2D.Raycast(_worldPosition, Vector2.zero, Mathf.Infinity, _interactableLayers);
 
@@ -123,10 +125,13 @@ public class DragManager : MonoBehaviour
 
     void Hover()
     {
+        // 현재 호버중인 물체를 받아옴
         _currentHoverTarget = (_hit.collider != null) ? _hit.collider.GetComponent<ICanHover>() : null;
+        
+        // 현재 호버중인 물체가 아까전에 호버중인 물체와 다를 경우 실행
         if (_currentHoverTarget != _previousHoverTarget)
         {
-
+            // 전에 호버하던 물체가 상호작용 가능한 오브젝트일 경우 HoverOut신호를 보냄
             if (_previousHoverTarget as MonoBehaviour )
             {
                 
@@ -134,11 +139,13 @@ public class DragManager : MonoBehaviour
                 
             }
             
+            // 만약 현재 호버중인 물체가 상호작용 가능한 오브젝트이고 현재 오브젝트가 호버가 가능한 상태일 경우 HoverIn 신호를 보냄
             if (_currentHoverTarget as MonoBehaviour && _currentHoverTarget.Hoverable)
             {
                 _currentHoverTarget.HoverIn();
             }
         }
+        // 전에 호버하던 물체를 현재 호버오브젝트로 바꿈 
         _previousHoverTarget = _currentHoverTarget;
     }
 

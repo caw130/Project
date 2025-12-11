@@ -20,13 +20,16 @@ public class ZullManager : MonoBehaviour
 
     public void SetZulls()
     {
+        //내가 가질 수 있는 줄의 수 만큼 줄을 생성하는 부분
         for(int i = 0; i < UserStat.Instance.MaxZull; i++)
         {
             _zulls.Add(Instantiate(_zullPrefab, transform));
         }
+        //가지고 있는 줄들을 일정한 거리로 나열하는 메서드
         SetZullPosition();
         foreach (var zull in _zulls)
         {
+            //zull 들에서 설정한 카드를 받는 거리를 설정하는 부분
             zull.SetDistance(_placeDistance);
         }
     }

@@ -1,19 +1,32 @@
 using DG.Tweening;
 using UnityEngine;
 
+/// <summary>
+/// 실제 카드 오브젝트
+/// </summary>
 public class Card : CardAttribute, ICanDrag, ICanClick, ICanHover
 {
-
+    [Header("Animation")]
     [SerializeField] CardAnim _anim;
+
+    [Header("Renderers")]
     [SerializeField] SpriteRenderer _renderer;
     [SerializeField] SpriteRenderer _backRenderer;
     [SerializeField] SpriteRenderer _shadowRenderer;
+
+    // 현재 이 카드가 속해있는 부분
     ICardStacker _owner;
+
+    //현재 이 카드의 데이터
     CardData _data;
+
+
     public bool Dragable { get; set; } = true;
     public bool Clickable { get; set; } = true;
     public bool Hoverable { get; set; } = true;
     public bool HasBeenOnZull { get; set; } = false;
+
+
     public ICardStacker Owner => _owner;
     public CardData Data => _data;
 

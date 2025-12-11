@@ -10,9 +10,7 @@ public class Hand : MonoBehaviour, ICardStacker
     [SerializeField] ThrowDeck _throwDeck;
 
     public List<Card> Cards => _drawCard;
-    /// <summary>
-    /// Ä«µåµéÀÇ À§Ä¡¸¦ ¼Õ¿¡¼­ Àç ¹è¿­
-    /// </summary>
+
     void ReArrangeHand()
     {
         int count = _drawCard.Count;
@@ -23,7 +21,6 @@ public class Hand : MonoBehaviour, ICardStacker
         for (int i = 0; i < count; i++)
         {
             Card currentCard = _drawCard[i];
-
 
             float yPos = topy - (spacing * (i + 1));
             float zPos = i * _cardDepth;
@@ -126,7 +123,7 @@ public class Hand : MonoBehaviour, ICardStacker
     }
 
     /// <summary>
-    /// Å©±â °¡´ÆÀ» À§ÇØ Ãß°¡
+    /// Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
     /// </summary>
 
     private void OnDrawGizmosSelected()
